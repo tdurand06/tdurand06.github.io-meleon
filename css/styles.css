@@ -20,11 +20,3 @@
 .gradient-bg {
   background: linear-gradient(135deg, var(--meleon-green) 0%, var(--meleon-accent-1) 100%);
 }
-
-/* Add any other custom styles here */
-/* Control maximum width of the content */
-.content-wrapper {
-  max-width: 1024px; /* This creates a comfortable reading width */
-  margin: 0 auto;    /* Centers the content */
-  padding: 0 2rem;   /* Adds some breathing room on the sides */
-}
