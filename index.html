@@ -5,60 +5,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meleon - Smart Control Systems</title>
     
+    <!-- Core Stylesheets -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Add Alpine.js for mobile menu handling -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
     <style>
+        /* Custom Styles */
         html {
             scroll-behavior: smooth;
         }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress-container {
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+        }
+        
+        .scroll-progress-bar {
+            height: 100%;
+            background: var(--meleon-green);
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Card Flip Animations */
+        .perspective {
+            perspective: 1000px;
+        }
+
+        .preserve-3d {
+            transform-style: preserve-3d;
+        }
+
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu-enter {
+            transform: translateX(100%);
+        }
+
+        .mobile-menu-enter-active {
+            transform: translateX(0%);
+            transition: transform 0.3s ease-out;
+        }
+
+        .mobile-menu-exit {
+            transform: translateX(0%);
+        }
+
+        .mobile-menu-exit-active {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in;
+        }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full bg-white shadow-lg z-50">
-        <div class="container mx-auto px-2 py-3 md:py-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <img src="images/meleon-logo-black-transp.png" alt="Meleon Logo" class="h-12 md:h-20">
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#solutions" class="text-meleon-primary hover-meleon">Solutions</a>
-                    <a href="#notre-produit" class="text-meleon-primary hover-meleon">Notre Produit</a>
-                    <a href="#experts" class="text-meleon-primary hover-meleon">Nos Experts</a>
-                    <a href="#contact" class="bg-meleon-primary text-white px-4 py-2 rounded-lg hover-bg-meleon-medium">
-                        Contact
-                    </a>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-meleon-primary">
+<body class="bg-gray-50" x-data="{ mobileMenuOpen: false, scrollProgress: 0 }">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" 
+             x-bind:style="'width: ' + scrollProgress + '%'"></div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="md:hidden fixed inset-0 bg-black bg-opacity-50 transition-opacity z-50"
+         x-show="mobileMenuOpen"
+         x-transition:enter="transition-opacity ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition-opacity ease-in duration-300"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         @click="mobileMenuOpen = false">
+        
+        <!-- Mobile Menu Panel -->
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl"
+             @click.stop
+             x-show="mobileMenuOpen"
+             x-transition:enter="mobile-menu-enter-active"
+             x-transition:exit="mobile-menu-exit-active">
+            
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <img src="images/meleon-logo-black-transp.png" alt="Meleon Logo" class="h-8">
+                    <button @click="mobileMenuOpen = false" class="text-gray-500">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
                 </div>
+                
+                <nav class="space-y-6">
+                    <a href="#solutions" @click="mobileMenuOpen = false" 
+                       class="block text-lg text-meleon-primary hover:text-meleon-medium transition-colors">
+                        Solutions
+                    </a>
+                    <a href="#notre-produit" @click="mobileMenuOpen = false"
+                       class="block text-lg text-meleon-primary hover:text-meleon-medium transition-colors">
+                        Notre Produit
+                    </a>
+                    <a href="#experts" @click="mobileMenuOpen = false"
+                       class="block text-lg text-meleon-primary hover:text-meleon-medium transition-colors">
+                        Nos Experts
+                    </a>
+                    <a href="#contact" @click="mobileMenuOpen = false"
+                       class="block text-lg bg-meleon-primary text-white px-4 py-2 rounded-lg 
+                              hover:bg-meleon-medium transition-colors text-center">
+                        Contact
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Navigation Bar -->
+    <nav class="fixed w-full bg-white shadow-lg z-40">
+        <div class="container mx-auto px-4 py-3 md:py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="images/meleon-logo-black-transp.png" alt="Meleon Logo" 
+                         class="h-12 md:h-16 w-auto object-contain">
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solutions" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                        Solutions
+                    </a>
+                    <a href="#notre-produit" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                        Notre Produit
+                    </a>
+                    <a href="#experts" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                        Nos Experts
+                    </a>
+                    <a href="#contact" class="bg-meleon-primary text-white px-4 py-2 rounded-lg 
+                                            hover:bg-meleon-medium transition-colors animate-pulse">
+                        Contact
+                    </a>
+                </div>
+                
+                <button class="md:hidden text-meleon-primary" @click="mobileMenuOpen = true">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-20 pb-32 gradient-bg">
-        <div class="container mx-auto px-2 text-center h-full">
-            <div class="mt-16 flex flex-col min-h-[400px]">
-                <!-- Logo with increased size on desktop -->
+    <!-- Hero Section with Enhanced Gradient -->
+    <section class="min-h-screen pt-20 pb-32 bg-gradient-to-br from-meleon-green to-meleon-green-dark">
+        <div class="container mx-auto px-4 text-center h-full">
+            <div class="mt-16 flex flex-col min-h-[500px]" data-aos="fade-up">
                 <img src="images/meleon-logo-white-transp.png" alt="Meleon Logo" 
-                     class="mx-auto w-64 md:w-96 mb-8">
+                     class="mx-auto w-64 md:w-96 mb-12 transform hover:scale-105 transition-transform duration-300">
                 
-                <!-- Main title with increased bottom margin -->
-                <h1 class="text-5xl font-bold text-white mb-24">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-24">
                     Un contrôleur d'énergie intelligent
                 </h1>
                 
-                <!-- Experience text container with auto margins to push it down -->
                 <div class="mt-auto">
-                    <p class="text-2xl text-gray-200 italic relative">
-                        <span class="absolute left-1/2 -top-4 w-16 h-px bg-gray-400 transform -translate-x-1/2"></span>
+                    <p class="text-xl md:text-2xl text-gray-200 italic relative">
+                        <span class="absolute left-1/2 -top-8 w-16 h-px bg-gray-400 transform -translate-x-1/2"></span>
                         né de 12 ans d'éxperience terrain
                     </p>
                 </div>
@@ -66,34 +190,43 @@
         </div>
     </section>
 
-    <!-- Meleon Solutions Section -->
-    <section id="solutions" class="py-20 bg-white">
+    <!-- Solutions Section with Card Animations -->
+    <section id="solutions" class="py-20 bg-gradient-to-b from-white to-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-8">Nos Solutions</h2>
-            <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
-                Un contrôleur complet et universel permettant une exploitation et une maintenance simple et paramétrable de systèmes de production d'énergie
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-8" data-aos="fade-up">
+                Nos Solutions
+            </h2>
+            <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up">
+                Un contrôleur complet et universel permettant une exploitation et une maintenance 
+                simple et paramétrable de systèmes de production d'énergie
             </p>
-            <!-- Triangle Layout -->
+            
+            <!-- Triangle Layout with Hover Effects -->
             <div class="flex flex-col items-center space-y-12">
                 <!-- Top Solution -->
-                <div class="flex flex-col items-center max-w-xl">
-                    <img src="images/Supervision2.png" alt="Support" class="w-96 h-96 object-contain mb-6">
+                <div class="transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg p-6"
+                     data-aos="fade-down">
+                    <img src="images/Support.png" alt="Support" class="w-96 h-96 object-contain mb-6">
                     <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
-                        Ajout d'un contrôleur de supervision
+                        Support au contrôleur existant
                     </h3>
                 </div>
+                
                 <!-- Bottom Solutions -->
-                <div class="flex justify-center gap-24">
-                    <div class="flex flex-col items-center max-w-xl">
-                        <img src="images/Remplacement2.png" alt="Remplacement" class="w-96 h-96 object-contain mb-6">
+                <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-24">
+                    <div class="transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg p-6"
+                         data-aos="fade-right">
+                        <img src="images/Remplacement.png" alt="Remplacement" class="w-96 h-96 object-contain mb-6">
                         <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
                             Remplacement du contrôleur existant
                         </h3>
                     </div>
-                    <div class="flex flex-col items-center max-w-xl">
-                        <img src="images/Support2.png" alt="Supervision" class="w-96 h-96 object-contain mb-6">
+                    
+                    <div class="transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg p-6"
+                         data-aos="fade-left">
+                        <img src="images/Supervision.png" alt="Supervision" class="w-96 h-96 object-contain mb-6">
                         <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
-                            Support au contrôleur existant
+                            Ajout d'un contrôleur de supervision
                         </h3>
                     </div>
                 </div>
@@ -101,16 +234,18 @@
         </div>
     </section>
 
-    <!-- Notre Produit Section -->
-    <section id="notre-produit" class="py-20 bg-gray-50">
+    <!-- Notre Produit Section with Enhanced Layout -->
+    <section id="notre-produit" class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">Notre Produit</h2>
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
+                Notre Produit
+            </h2>
             
             <!-- Dashboard Section -->
-            <div class="mb-20">
+            <div class="mb-20" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-meleon-primary text-center mb-8">Dashboard</h3>
-                <div class="max-w-5xl mx-auto">
-                    <img src="images/Dashboard.png" alt="Dashboard" class="w-full rounded-lg shadow-lg mb-8">
+                <div class="max-w-5xl mx-auto transform transition-all duration-300 hover:scale-105">
+                    <img src="images/Dashboard.png" alt="Dashboard" class="w-full rounded-lg shadow-xl mb-8">
                     <p class="text-xl text-gray-700 text-center italic">
                         Un système unique pour tous vos besoins en contrôle, monitoring, analyse de la performance, 
                         stockage de données et GMAO
@@ -120,25 +255,36 @@
 
             <!-- Paramétrage Section -->
             <div class="mb-16">
-                <h3 class="text-3xl font-bold text-meleon-primary text-center mb-8">Paramétrage du contrôle</h3>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <img src="images/Protocol.png" alt="Protocol" class="w-full rounded-lg shadow-lg">
-                    <img src="images/Regulation.png" alt="Regulation" class="w-full rounded-lg shadow-lg">
+                <h3 class="text-3xl font-bold text-meleon-primary text-center mb-8" data-aos="fade-up">
+                    Paramétrage du contrôle
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12" data-aos="fade-up">
+                    <div class="transform transition-all duration-300 hover:scale-105">
+                        <img src="images/Protocol.png" alt="Protocol" class="w-full rounded-lg shadow-xl">
+                    </div>
+                    <div class="transform transition-all duration-300 hover:scale-105">
+                        <img src="images/Regulation.png" alt="Regulation" class="w-full rounded-lg shadow-xl">
+                    </div>
                 </div>
+                
                 <!-- Creative Text Layout -->
                 <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <div class="bg-white p-6 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
+                                hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
                         <p class="text-lg text-gray-700">
                             A l'intersection entre le PMS (Power Management System), l'EMS (Energy Management System) 
                             et les systèmes SCADA traditionnels.
                         </p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
+                                hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
                         <p class="text-lg text-gray-700">
-                            Une solution transparente, pour une identification des problèmes et gestion de la maintenance simplifiée
+                            Une solution transparente, pour une identification des problèmes et gestion de la 
+                            maintenance simplifiée
                         </p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
+                                hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
                         <p class="text-lg text-gray-700">
                             Une solution 100% flexible, évolutive et indépendante: créez vous-même vos règles de contrôle, 
                             ajoutez vos protocoles de communication, sans expertise requise en programmation ou en automatisme.
@@ -149,25 +295,35 @@
         </div>
     </section>
 
-    <!-- Solutions Comparison Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-2">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">
+    <!-- Solutions Comparison Section with Enhanced Title -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
                 Meleon, ayez plus de contrôle sur votre contrôle
             </h2>
             
             <!-- Traditional Solution -->
             <div class="mb-16">
-                <h3 class="text-3xl font-bold text-center text-meleon-primary mb-8">
+                <h3 class="text-3xl font-bold text-center text-meleon-primary mb-8" data-aos="fade-up">
                     Solutions Traditionnelles
                 </h3>
-                <div class="rounded-lg overflow-hidden shadow-lg border-1 border-meleon-primary max-w-4xl mx-auto">
+                <div class="rounded-lg overflow-hidden shadow-xl border-1 border-meleon-primary max-w-4xl mx-auto 
+                            transform transition-all duration-300 hover:scale-105" data-aos="fade-right">
                     <img src="images/Solution-mauvaise-sans-Meleon.png" alt="Solution Traditionnelle" class="w-full">
-                    <div class="p-6">
+                    <div class="p-6 bg-white">
                         <ul class="space-y-3 text-gray-600">
-                            <li>• Plusieurs prestataires et interfaces complexes</li>
-                            <li>• Connexion cloud requise</li>
-                            <li>• Modifications coûteuses</li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-meleon-primary rounded-full mr-2"></span>
+                                Plusieurs prestataires et interfaces complexes
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-meleon-primary rounded-full mr-2"></span>
+                                Connexion cloud requise
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-meleon-primary rounded-full mr-2"></span>
+                                Modifications coûteuses
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -175,16 +331,26 @@
     
             <!-- Meleon Solution -->
             <div>
-                <h3 class="text-3xl font-bold text-center text-meleon-primary mb-8">
+                <h3 class="text-3xl font-bold text-center text-meleon-primary mb-8" data-aos="fade-up">
                     La Solution Meleon
                 </h3>
-                <div class="rounded-lg overflow-hidden shadow-lg border-1 border-meleon-primary max-w-4xl mx-auto">
+                <div class="rounded-lg overflow-hidden shadow-xl border-1 border-meleon-primary max-w-4xl mx-auto 
+                            transform transition-all duration-300 hover:scale-105" data-aos="fade-left">
                     <img src="images/Solution-avec-Meleon.png" alt="Solution Meleon" class="w-full">
-                    <div class="p-6">
+                    <div class="p-6 bg-white">
                         <ul class="space-y-3 text-gray-600">
-                            <li>• Un seul outil, un seul interlocuteur</li>
-                            <li>• Fonctionne en local et cloud</li>
-                            <li>• Paramétrage flexible et autonome</li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-meleon-primary rounded-full mr-2"></span>
+                                Un seul outil, un seul interlocuteur
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-meleon-primary rounded-full mr-2"></span>
+                                Fonctionne en local et cloud
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-meleon-primary rounded-full mr-2"></span>
+                                Paramétrage flexible et autonome
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -192,79 +358,140 @@
         </div>
     </section>
 
-    <!-- Experts Section -->
-    <section id="experts" class="py-20 bg-gray-50">
+    <!-- Experts Section with Card Flip Animation -->
+    <section id="experts" class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">Nos Experts</h2>
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
+                Nos Experts
+            </h2>
             
-            <!-- Expert 1 -->
-            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
-                <div class="md:w-1/4">
-                    <img src="images/Quentin.png" alt="Quentin" class="w-full rounded-lg shadow-lg">
+            <!-- Expert Cards with Flip Effect -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Expert 1 -->
+                <div class="group perspective" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-full w-full transition-transform duration-500 transform preserve-3d 
+                                group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute inset-0 backface-hidden">
+                            <div class="flex items-center p-6 bg-white rounded-lg shadow-lg h-full">
+                                <div class="md:w-1/3">
+                                    <img src="images/Quentin.png" alt="Quentin" class="w-full rounded-lg shadow-lg">
+                                </div>
+                                <div class="md:w-2/3 pl-6">
+                                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Quentin CRAMBES</h3>
+                                    <p class="text-lg font-semibold text-gray-700">
+                                        Expert métier – contrôle des systèmes hybrides de production d'énergie
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180">
+                            <div class="flex items-center justify-center p-6 bg-meleon-primary text-white rounded-lg 
+                                        shadow-lg h-full">
+                                <p class="text-lg">
+                                    12 ans d'expérience dans les énergies renouvelables et l'automatisme
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-3/4">
-                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Quentin CRAMBES</h3>
-                    <p class="text-xl font-semibold text-gray-700 mb-2">
-                        Expert métier – contrôle des systèmes hybrides de production d'énergie
-                    </p>
-                    <p class="text-lg text-gray-600">
-                        12 ans d'expérience dans les énergies renouvelables et l'automatisme
-                    </p>
-                </div>
-            </div>
 
-            <!-- Expert 2 -->
-            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
-                <div class="md:w-1/4">
-                    <img src="images/Hadrien.png" alt="Hadrien" class="w-full rounded-lg shadow-lg">
+                <!-- Expert 2 -->
+                <div class="group perspective" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-full w-full transition-transform duration-500 transform preserve-3d 
+                                group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute inset-0 backface-hidden">
+                            <div class="flex items-center p-6 bg-white rounded-lg shadow-lg h-full">
+                                <div class="md:w-1/3">
+                                    <img src="images/Hadrien.png" alt="Hadrien" class="w-full rounded-lg shadow-lg">
+                                </div>
+                                <div class="md:w-2/3 pl-6">
+                                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Hadrien LIGNIERES</h3>
+                                    <p class="text-lg font-semibold text-gray-700">
+                                        Expert développement full-stack et data
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180">
+                            <div class="flex items-center justify-center p-6 bg-meleon-primary text-white rounded-lg 
+                                        shadow-lg h-full">
+                                <p class="text-lg">
+                                    8 ans d'expérience en développement de systèmes de base de données
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-3/4 text-right">
-                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Hadrien LIGNIERES</h3>
-                    <p class="text-xl font-semibold text-gray-700 mb-2">
-                        Expert développement full-stack et data
-                    </p>
-                    <p class="text-lg text-gray-600">
-                        8 ans d'expérience en développement de systèmes de base de données
-                    </p>
-                </div>
-            </div>
 
-            <!-- Expert 3 -->
-            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
-                <div class="md:w-1/4">
-                    <img src="images/Loic.png" alt="Loic" class="w-full rounded-lg shadow-lg">
+                <!-- Expert 3 -->
+                <div class="group perspective" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-full w-full transition-transform duration-500 transform preserve-3d 
+                                group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute inset-0 backface-hidden">
+                            <div class="flex items-center p-6 bg-white rounded-lg shadow-lg h-full">
+                                <div class="md:w-1/3">
+                                    <img src="images/Loic.png" alt="Loic" class="w-full rounded-lg shadow-lg">
+                                </div>
+                                <div class="md:w-2/3 pl-6">
+                                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Loic GUIHENEUF</h3>
+                                    <p class="text-lg font-semibold text-gray-700">
+                                        Expert métier – systèmes hybrides de production d'énergie
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180">
+                            <div class="flex items-center justify-center p-6 bg-meleon-primary text-white rounded-lg 
+                                        shadow-lg h-full">
+                                <p class="text-lg">
+                                    6 ans d'expérience dans la conception, l'installation et le SAV d'installations PV hybrides
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-3/4">
-                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Loic GUIHENEUF</h3>
-                    <p class="text-xl font-semibold text-gray-700 mb-2">
-                        Expert métier – systèmes hybrides de production d'énergie
-                    </p>
-                    <p class="text-lg text-gray-600">
-                        6 ans d'expérience dans la conception, l'installation et le SAV d'installations PV hybrides
-                    </p>
-                </div>
-            </div>
 
-            <!-- Expert 4 -->
-            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
-                <div class="md:w-1/4">
-                    <img src="images/meleon-logo-black-transp.png" alt="Pierre" class="w-full rounded-lg shadow-lg">
-                </div>
-                <div class="md:w-3/4 text-right">
-                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">PIERRE SCHAMBERGER</h3>
-                    <p class="text-xl font-semibold text-gray-700 mb-2">
-                        Expert électronique embarquée & IT
-                    </p>
-                    <p class="text-lg text-gray-600">
-                        14 ans d'expérience en électronique et systèmes de monitoring environnementaux
-                    </p>
+                <!-- Expert 4 -->
+                <div class="group perspective" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-full w-full transition-transform duration-500 transform preserve-3d 
+                                group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute inset-0 backface-hidden">
+                            <div class="flex items-center p-6 bg-white rounded-lg shadow-lg h-full">
+                                <div class="md:w-1/3">
+                                    <img src="images/meleon-logo-black-transp.png" alt="Pierre" class="w-full rounded-lg shadow-lg">
+                                </div>
+                                <div class="md:w-2/3 pl-6">
+                                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">PIERRE SCHAMBERGER</h3>
+                                    <p class="text-lg font-semibold text-gray-700">
+                                        Expert électronique embarquée & IT
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180">
+                            <div class="flex items-center justify-center p-6 bg-meleon-primary text-white rounded-lg 
+                                        shadow-lg h-full">
+                                <p class="text-lg">
+                                    14 ans d'expérience en électronique et systèmes de monitoring environnementaux
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer with ISO image and copyright -->
-    <footer class="bg-white py-8">
+    <footer class="bg-white py-8 border-t border-gray-200">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
                 <p class="text-gray-600">© 2025 Meleon. Tous droits réservés.</p>
@@ -273,5 +500,23 @@
         </div>
     </footer>
 
+    <!-- Initialize AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Scroll Progress Handler
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
+        });
+    </script>
 </body>
 </html>
