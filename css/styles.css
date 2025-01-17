@@ -1,22 +1,55 @@
 /* css/styles.css */
 
 :root {
-  /* Primary Colors */
-  --meleon-green: #0D3939;
-  --meleon-yellow: #E7E569;
+  /* Primary Colors
+     These are the main brand colors that form the foundation of the design system */
+  --meleon-green: #0D3939;    /* Dark green - Main brand color */
+  --meleon-yellow: #E7E569;   /* Light yellow - Secondary brand color */
   
-  /* Secondary Colors - from your brandboard */
-  --meleon-green-light: #063432;
-  --meleon-accent-1: #3d7068;
-  --meleon-accent-2: #54b89a;
-  /* Add other secondary colors as needed */
+  /* Secondary Colors - Green Spectrum
+     A range of green variations that complement the primary green */
+  --meleon-green-darkest: #063432;   /* #063432 - Darkest green shade */
+  --meleon-green-dark: #3d7068;      /* #3d7068 - Deep forest green */
+  --meleon-green-medium: #54b89a;    /* #54b89a - Sea green */
+  --meleon-green-sage: #74a8ab;      /* #74a8ab - Sage green */
+  --meleon-green-blue: #5eb8e8;      /* #5eb8e8 - Blue-tinted green */
+  
+  /* Secondary Colors - Earth Tones
+     Warm and natural colors that add depth to the palette */
+  --meleon-olive: #d3c82a;           /* #d3c82a - Olive yellow */
+  --meleon-lime: #92c143;            /* #92c143 - Fresh lime */
+  --meleon-forest: #51a447;          /* #51a447 - Forest green */
+  --meleon-moss: #6b7242;            /* #6b7242 - Moss green */
+  --meleon-sand: #f7ce5b;            /* #f7ce5b - Sandy yellow */
+  
+  /* Secondary Colors - Neutral Greens
+     Softer green tones for supporting elements */
+  --meleon-sage-light: #87a878;      /* #87a878 - Light sage */
+  --meleon-green-pale: #b0bc98;      /* #b0bc98 - Pale green */
+  --meleon-green-mist: #c7ccb9;      /* #c7ccb9 - Misty green */
+  --meleon-green-wash: #cae2bc;      /* #cae2bc - Washed green */
+  --meleon-green-hint: #dbf9b8;      /* #dbf9b8 - Hint of green */
+  
+  /* Secondary Colors - Accent Tones
+     Colors for highlights and special elements */
+  --meleon-taupe: #ccc39e;           /* #ccc39e - Neutral taupe */
+  --meleon-peach: #f8b05b;           /* #f8b05b - Warm peach */
+  --meleon-olive-dark: #af9b46;      /* #af9b46 - Dark olive */
+  --meleon-green-yellow: #bfba51;    /* #bfba51 - Yellow-green */
+  --meleon-brown: #ba7544;           /* #ba7544 - Earthy brown */
   
   /* Typography */
   --font-primary: 'ITC Avant Garde Gothic Std', sans-serif;
   --font-secondary: 'Montserrat Light', sans-serif;
 }
 
-/* Custom styles that go beyond Tailwind's utilities */
+/* Custom Gradient Styles */
 .gradient-bg {
-  background: linear-gradient(135deg, var(--meleon-green) 0%, var(--meleon-accent-1) 100%);
+  background: linear-gradient(135deg, var(--meleon-green) 0%, var(--meleon-yellow) 100%);
 }
+
+/* You might want to add these utility classes for consistent color application */
+.bg-meleon-primary { background-color: var(--meleon-green); }
+.bg-meleon-secondary { background-color: var(--meleon-yellow); }
+.text-meleon-primary { color: var(--meleon-green); }
+.text-meleon-secondary { color: var(--meleon-yellow); }
