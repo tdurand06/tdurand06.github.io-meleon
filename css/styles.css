@@ -1,0 +1,24 @@
+/* css/styles.css */
+
+:root {
+  /* Primary Colors */
+  --meleon-green: #0D3939;
+  --meleon-yellow: #E7E569;
+  
+  /* Secondary Colors - from your brandboard */
+  --meleon-green-light: #063432;
+  --meleon-accent-1: #3d7068;
+  --meleon-accent-2: #54b89a;
+  /* Add other secondary colors as needed */
+  
+  /* Typography */
+  --font-primary: 'ITC Avant Garde Gothic Std', sans-serif;
+  --font-secondary: 'Montserrat Light', sans-serif;
+}
+
+/* Custom styles that go beyond Tailwind's utilities */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--meleon-green) 0%, var(--meleon-accent-1) 100%);
+}
+
+/* Add any other custom styles here */
