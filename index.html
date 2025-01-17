@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meleon - Smart Control Systems</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <!-- Font imports -->
+    <!-- Note: You'll need to properly license ITC Avant Garde Gothic Std -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full bg-white shadow-lg z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="images/Meleon-logo-faded-best-logo.png" alt="Meleon Logo" class="h-12">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-meleon-green hover:text-meleon-accent-1">À Propos</a>
+                    <a href="#experts" class="text-meleon-green hover:text-meleon-accent-1">Nos Experts</a>
+                    <a href="#solutions" class="text-meleon-green hover:text-meleon-accent-1">Solutions</a>
+                    <a href="#contact" class="bg-meleon-green text-white px-4 py-2 rounded-lg hover:bg-meleon-accent-1">
+                        Contact
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-meleon-green">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-32 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mt-16">
+                <img src="images/Meleon-logo-white-black-background.png" alt="Meleon Logo" class="mx-auto w-64 mb-8">
+                <h1 class="text-5xl font-bold text-white mb-6">
+                    Smart Control Systems
+                </h1>
+                <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
+                    Un contrôleur complet et universel permettant une exploitation et une maintenance simple et paramétrable de systèmes de production d'énergie
+                </p>
+                <a href="#contact" class="bg-meleon-yellow text-meleon-green px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors">
+                    En Savoir Plus
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Comparison Section -->
+    <section id="solutions" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-meleon-green mb-16">
+                Notre Solution vs Solutions Traditionnelles
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Traditional Solution -->
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="images/Solution-mauvaise-sans-Meleon.png" alt="Solution Traditionnelle" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Solutions Traditionnelles</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li>• Plusieurs prestataires et interfaces complexes</li>
+                            <li>• Connexion cloud requise</li>
+                            <li>• Modifications coûteuses</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Meleon Solution -->
+                <div class="rounded-lg overflow-hidden shadow-lg border-2 border-meleon-green">
+                    <img src="images/Solution-avec-Meleon.png" alt="Solution Meleon" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-meleon-green mb-4">Solution Meleon</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li>• Un seul outil, un seul interlocuteur</li>
+                            <li>• Fonctionne en local et cloud</li>
+                            <li>• Paramétrage flexible et autonome</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More sections to follow... -->
+</body>
+</html>
