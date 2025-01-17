@@ -12,8 +12,14 @@
     <link href="css/styles.css" rel="stylesheet">
     
     <!-- Font imports -->
-    <!-- Note: You'll need to properly license ITC Avant Garde Gothic Std -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Add smooth scroll behavior -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Fixed Navigation Bar -->
@@ -24,16 +30,13 @@
                     <img src="images/meleon-logo-black-transp.png" alt="Meleon Logo" class="h-12">
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <!-- Updated navigation links with new color classes -->
-                    <a href="#about" class="text-meleon-primary hover-meleon">À Propos</a>
-                    <a href="#experts" class="text-meleon-primary hover-meleon">Nos Experts</a>
                     <a href="#solutions" class="text-meleon-primary hover-meleon">Solutions</a>
-                    <!-- Updated contact button with new background color class -->
+                    <a href="#notre-produit" class="text-meleon-primary hover-meleon">Notre Produit</a>
+                    <a href="#experts" class="text-meleon-primary hover-meleon">Nos Experts</a>
                     <a href="#contact" class="bg-meleon-primary text-white px-4 py-2 rounded-lg hover-bg-meleon-medium">
                         Contact
                     </a>
                 </div>
-                <!-- Mobile menu button updated with new text color -->
                 <div class="md:hidden">
                     <button class="text-meleon-primary">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,40 +48,177 @@
         </div>
     </nav>
 
-    
     <!-- Hero Section -->
     <section class="pt-20 pb-32 gradient-bg">
         <div class="container mx-auto px-2 text-center">
             <div class="mt-16">
                 <img src="images/meleon-logo-white-transp.png" alt="Meleon Logo" class="mx-auto w-64 mb-8">
                 <div class="flex flex-col items-center gap-3">
-                        <!-- Main heading -->
-                        <h1 class="text-5xl font-bold text-white">
-                            Un contrôleur d'énergie intelligent
-                        </h1>
-                        <!-- Subheading with decorative elements -->
-                        <p class="text-2xl text-gray-200 italic relative">
-                            <span class="absolute left-1/2 -top-1 w-16 h-px bg-gray-400 transform -translate-x-1/2"></span>
-                            né de 12 ans d'éxperience terrain
-                        </p>
-                    </div>
-                <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
-                    Un contrôleur complet et universel permettant une exploitation et une maintenance simple et paramétrable de systèmes de production d'énergie
-                </p>
-                <!-- Updated call-to-action button with new color classes -->
-                <a href="#contact" class="bg-meleon-secondary text-meleon-primary px-8 py-4 rounded-lg text-lg font-semibold hover-bg-meleon-medium transition-colors">
+                    <h1 class="text-5xl font-bold text-white">
+                        Un contrôleur d'énergie intelligent
+                    </h1>
+                    <p class="text-2xl text-gray-200 italic relative">
+                        <span class="absolute left-1/2 -top-1 w-16 h-px bg-gray-400 transform -translate-x-1/2"></span>
+                        né de 12 ans d'éxperience terrain
+                    </p>
+                </div>
+                <a href="#solutions" class="bg-meleon-secondary text-meleon-primary px-8 py-4 rounded-lg text-lg font-semibold hover-bg-meleon-medium transition-colors">
                     En Savoir Plus
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Comparison Section -->
+   <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meleon - Smart Control Systems</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <!-- Font imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Add smooth scroll behavior -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Fixed Navigation Bar -->
+    <nav class="fixed w-full bg-white shadow-lg z-50">
+        <div class="container mx-auto px-2 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="images/meleon-logo-black-transp.png" alt="Meleon Logo" class="h-12">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solutions" class="text-meleon-primary hover-meleon">Solutions</a>
+                    <a href="#notre-produit" class="text-meleon-primary hover-meleon">Notre Produit</a>
+                    <a href="#experts" class="text-meleon-primary hover-meleon">Nos Experts</a>
+                    <a href="#contact" class="bg-meleon-primary text-white px-4 py-2 rounded-lg hover-bg-meleon-medium">
+                        Contact
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-meleon-primary">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-32 gradient-bg">
+        <div class="container mx-auto px-2 text-center">
+            <div class="mt-16">
+                <img src="images/meleon-logo-white-transp.png" alt="Meleon Logo" class="mx-auto w-64 mb-8">
+                <div class="flex flex-col items-center gap-3">
+                    <h1 class="text-5xl font-bold text-white">
+                        Un contrôleur d'énergie intelligent
+                    </h1>
+                    <p class="text-2xl text-gray-200 italic relative">
+                        <span class="absolute left-1/2 -top-1 w-16 h-px bg-gray-400 transform -translate-x-1/2"></span>
+                        né de 12 ans d'éxperience terrain
+                    </p>
+                </div>
+                <a href="#solutions" class="bg-meleon-secondary text-meleon-primary px-8 py-4 rounded-lg text-lg font-semibold hover-bg-meleon-medium transition-colors">
+                    En Savoir Plus
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meleon Solutions Section -->
     <section id="solutions" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-8">Nos Solutions</h2>
+            <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto">
+                Un contrôleur complet et universel permettant une exploitation et une maintenance simple et paramétrable de systèmes de production d'énergie
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="flex flex-col items-center">
+                    <img src="images/Support.png" alt="Support" class="w-32 h-32 object-contain mb-6">
+                    <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
+                        Ajout d'un contrôleur de supervision
+                    </h3>
+                </div>
+                <!-- Solution 2 -->
+                <div class="flex flex-col items-center">
+                    <img src="images/Remplacement.png" alt="Remplacement" class="w-32 h-32 object-contain mb-6">
+                    <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
+                        Remplacement du contrôleur existant
+                    </h3>
+                </div>
+                <!-- Solution 3 -->
+                <div class="flex flex-col items-center">
+                    <img src="images/Supervision.png" alt="Supervision" class="w-32 h-32 object-contain mb-6">
+                    <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
+                        Support au contrôleur existant
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Produit Section -->
+    <section id="notre-produit" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">Notre Produit</h2>
+            
+            <!-- Main Dashboard Feature -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <div class="md:w-1/2">
+                    <img src="images/Dashboard.png" alt="Dashboard" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-xl text-gray-700">
+                        Un système unique pour tous vos besoins en contrôle, monitoring, analyse de la performance, 
+                        stockage de données et GMAO
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Features -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-8">
+                    <img src="images/Protocol.png" alt="Protocol" class="w-full rounded-lg shadow-lg">
+                    <img src="images/Regulation.png" alt="Regulation" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="space-y-8 flex flex-col justify-center">
+                    <p class="text-xl text-gray-700">
+                        A l'intersection entre le PMS (Power Management System), l'EMS (Energy Management System) 
+                        et les systèmes SCADA traditionnels.
+                    </p>
+                    <p class="text-xl text-gray-700">
+                        Une solution transparente, pour une identification des problèmes et gestion de la maintenance simplifiée
+                    </p>
+                    <p class="text-xl text-gray-700">
+                        Une solution 100% flexible, évolutive et indépendante: créez vous-même vos règles de contrôle, 
+                        ajoutez vos protocoles de communication, sans expertise requise en programmation ou en automatisme.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Comparison Section -->
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-2">
             <!-- Traditional Solution -->
             <div class="mb-16">
-                <!-- Updated heading with new text color -->
                 <h2 class="text-3xl font-bold text-center text-meleon-primary mb-8">
                     Solutions Traditionnelles
                 </h2>
@@ -96,11 +236,9 @@
     
             <!-- Meleon Solution -->
             <div>
-                <!-- Updated heading with new text color -->
                 <h2 class="text-3xl font-bold text-center text-meleon-primary mb-8">
                     La Solution Meleon
                 </h2>
-                <!-- Updated border color -->
                 <div class="rounded-lg overflow-hidden shadow-lg border-1 border-meleon-primary max-w-2xl mx-auto">
                     <img src="images/Solution-avec-Meleon.png" alt="Solution Meleon" class="w-full">
                     <div class="p-6">
@@ -114,7 +252,245 @@
             </div>
         </div>
     </section>
+
+    <!-- Experts Section -->
+    <section id="experts" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">Nos Experts</h2>
+            
+            <!-- Expert 1 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/Quentin.png" alt="Quentin" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Quentin CRAMBES</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert métier – contrôle des systèmes hybrides de production d'énergie
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        12 ans d'expérience dans les énergies renouvelables et l'automatisme
+                    </p>
+                </div>
+            </div>
+
+            <!-- Expert 2 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/Hadrien.png" alt="Hadrien" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-right">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Hadrien LIGNIERES</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert développement full-stack et data
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        8 ans d'expérience en développement de systèmes de base de données
+                    </p>
+                </div>
+            </div>
+
+            <!-- Expert 3 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/Loic.png" alt="Loic" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Loic GUIHENEUF</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert métier – systèmes hybrides de production d'énergie
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        6 ans d'expérience dans la conception, l'installation et le SAV d'installations PV hybrides
+                    </p>
+                </div>
+            </div>
+
+            <!-- Expert 4 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/meleon-logo-black-transp.png" alt="Pierre" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-right">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">PIERRE SCHAMBERGER</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert électronique embarquée & IT
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        14 ans d'expérience en électronique et systèmes de monitoring environnementaux
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with ISO image -->
+    <footer class="bg-white py-8 relative">
+        <div class="container mx-auto px-4">
+            <img src="images/Iso-transp.png" alt="ISO Certification" class="h-24 absolute bottom-8 left-8">
+        </div>
+    </footer>
+
+</body>
+</html>
+
+    <!-- Notre Produit Section -->
+    <section id="notre-produit" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">Notre Produit</h2>
+            
+            <!-- Main Dashboard Feature -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <div class="md:w-1/2">
+                    <img src="images/Dashboard.png" alt="Dashboard" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-xl text-gray-700">
+                        Un système unique pour tous vos besoins en contrôle, monitoring, analyse de la performance, 
+                        stockage de données et GMAO
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Features -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-8">
+                    <img src="images/Protocol.png" alt="Protocol" class="w-full rounded-lg shadow-lg">
+                    <img src="images/Regulation.png" alt="Regulation" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="space-y-8 flex flex-col justify-center">
+                    <p class="text-xl text-gray-700">
+                        A l'intersection entre le PMS (Power Management System), l'EMS (Energy Management System) 
+                        et les systèmes SCADA traditionnels.
+                    </p>
+                    <p class="text-xl text-gray-700">
+                        Une solution transparente, pour une identification des problèmes et gestion de la maintenance simplifiée
+                    </p>
+                    <p class="text-xl text-gray-700">
+                        Une solution 100% flexible, évolutive et indépendante: créez vous-même vos règles de contrôle, 
+                        ajoutez vos protocoles de communication, sans expertise requise en programmation ou en automatisme.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Comparison Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-2">
+            <!-- Traditional Solution -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-meleon-primary mb-8">
+                    Solutions Traditionnelles
+                </h2>
+                <div class="rounded-lg overflow-hidden shadow-lg border-1 border-meleon-primary max-w-2xl mx-auto">
+                    <img src="images/Solution-mauvaise-sans-Meleon.png" alt="Solution Traditionnelle" class="w-full">
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li>• Plusieurs prestataires et interfaces complexes</li>
+                            <li>• Connexion cloud requise</li>
+                            <li>• Modifications coûteuses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
     
-    <!-- More sections to follow... -->
+            <!-- Meleon Solution -->
+            <div>
+                <h2 class="text-3xl font-bold text-center text-meleon-primary mb-8">
+                    La Solution Meleon
+                </h2>
+                <div class="rounded-lg overflow-hidden shadow-lg border-1 border-meleon-primary max-w-2xl mx-auto">
+                    <img src="images/Solution-avec-Meleon.png" alt="Solution Meleon" class="w-full">
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li>• Un seul outil, un seul interlocuteur</li>
+                            <li>• Fonctionne en local et cloud</li>
+                            <li>• Paramétrage flexible et autonome</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experts Section -->
+    <section id="experts" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">Nos Experts</h2>
+            
+            <!-- Expert 1 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/Quentin.png" alt="Quentin" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Quentin CRAMBES</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert métier – contrôle des systèmes hybrides de production d'énergie
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        12 ans d'expérience dans les énergies renouvelables et l'automatisme
+                    </p>
+                </div>
+            </div>
+
+            <!-- Expert 2 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/Hadrien.png" alt="Hadrien" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-right">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Hadrien LIGNIERES</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert développement full-stack et data
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        8 ans d'expérience en développement de systèmes de base de données
+                    </p>
+                </div>
+            </div>
+
+            <!-- Expert 3 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/Loic.png" alt="Loic" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">Loic GUIHENEUF</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert métier – systèmes hybrides de production d'énergie
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        6 ans d'expérience dans la conception, l'installation et le SAV d'installations PV hybrides
+                    </p>
+                </div>
+            </div>
+
+            <!-- Expert 4 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-16">
+                <div class="md:w-1/3">
+                    <img src="images/meleon-logo-black-transp.png" alt="Pierre" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-right">
+                    <h3 class="text-2xl font-bold text-meleon-primary mb-2">PIERRE SCHAMBERGER</h3>
+                    <p class="text-xl font-semibold text-gray-700 mb-2">
+                        Expert électronique embarquée & IT
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        14 ans d'expérience en électronique et systèmes de monitoring environnementaux
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with ISO image -->
+    <footer class="bg-white py-8 relative">
+        <div class="container mx-auto px-4">
+            <img src="images/Iso-transp.png" alt="ISO Certification" class="h-24 absolute bottom-8 left-8">
+        </div>
+    </footer>
+
 </body>
 </html>
