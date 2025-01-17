@@ -63,7 +63,6 @@
 }
 
 /* You might want to add these utility classes for consistent color application */
-.bg-meleon-primary { background-color: var(--meleon-green); }
-.bg-meleon-secondary { background-color: var(--meleon-yellow); }
+
 .text-meleon-primary { color: var(--meleon-green); }
 .text-meleon-secondary { color: var(--meleon-yellow); }
