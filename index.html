@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meleon - Smart Control Systems</title>
-    
-    <!-- Tailwind CSS from CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    
-    <!-- Font imports -->
-    <!-- Note: You'll need to properly license ITC Avant Garde Gothic Std -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- [Head section remains the same...] -->
 </head>
 <body class="bg-gray-50">
     <!-- Navigation Bar -->
@@ -24,16 +12,16 @@
                     <img src="images/Logo-transp.png" alt="Meleon Logo" class="h-12">
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-meleon-green hover:text-meleon-accent-1">À Propos</a>
-                    <a href="#experts" class="text-meleon-green hover:text-meleon-accent-1">Nos Experts</a>
-                    <a href="#solutions" class="text-meleon-green hover:text-meleon-accent-1">Solutions</a>
-                    <a href="#contact" class="bg-meleon-green text-white px-4 py-2 rounded-lg hover:bg-meleon-accent-1">
+                    <a href="#about" class="text-meleon-primary hover-meleon">À Propos</a>
+                    <a href="#experts" class="text-meleon-primary hover-meleon">Nos Experts</a>
+                    <a href="#solutions" class="text-meleon-primary hover-meleon">Solutions</a>
+                    <a href="#contact" class="bg-meleon-primary text-white px-4 py-2 rounded-lg hover-bg-meleon-medium">
                         Contact
                     </a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button class="text-meleon-green">
+                    <button class="text-meleon-primary">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -54,7 +42,7 @@
                 <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
                     Un contrôleur complet et universel permettant une exploitation et une maintenance simple et paramétrable de systèmes de production d'énergie
                 </p>
-                <a href="#contact" class="bg-meleon-yellow text-meleon-green px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors">
+                <a href="#contact" class="bg-meleon-secondary text-meleon-primary px-8 py-4 rounded-lg text-lg font-semibold hover-bg-meleon-medium transition-colors">
                     En Savoir Plus
                 </a>
             </div>
@@ -66,7 +54,7 @@
         <div class="container mx-auto px-6">
             <!-- Traditional Solution -->
             <div class="mb-16">
-                <h2 class="text-3xl font-bold text-center text-meleon-green mb-8">
+                <h2 class="text-3xl font-bold text-center text-meleon-primary mb-8">
                     Solutions Traditionnelles
                 </h2>
                 <div class="rounded-lg overflow-hidden shadow-lg max-w-2xl mx-auto">
@@ -83,10 +71,10 @@
     
             <!-- Meleon Solution -->
             <div>
-                <h2 class="text-3xl font-bold text-center text-meleon-green mb-8">
+                <h2 class="text-3xl font-bold text-center text-meleon-primary mb-8">
                     La Solution Meleon
                 </h2>
-                <div class="rounded-lg overflow-hidden shadow-lg border-2 border-meleon-green max-w-2xl mx-auto">
+                <div class="rounded-lg overflow-hidden shadow-lg border-2 border-meleon-primary max-w-2xl mx-auto">
                     <img src="images/Solution-avec-Meleon.png" alt="Solution Meleon" class="w-full">
                     <div class="p-6">
                         <ul class="space-y-3 text-gray-600">
@@ -99,7 +87,5 @@
             </div>
         </div>
     </section>
-    
-        <!-- More sections to follow... -->
-    </body>
-    </html>
+</body>
+</html>
