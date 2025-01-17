@@ -48,6 +48,20 @@
   background: linear-gradient(135deg, var(--meleon-green) 0%, var(--meleon-yellow) 100%);
 }
 
+.gradient-bg-reverse {
+  background: linear-gradient(-45deg,  /* Note the negative angle */
+    var(--meleon-green) 0%, 
+    var(--meleon-yellow) 100%
+  );
+}
+.gradient-bg-smooth {
+  background: linear-gradient(135deg, 
+    var(--meleon-green) 0%, 
+    var(--meleon-green-medium) 50%,
+    var(--meleon-yellow) 100%
+  );
+}
+
 /* You might want to add these utility classes for consistent color application */
 .bg-meleon-primary { background-color: var(--meleon-green); }
 .bg-meleon-secondary { background-color: var(--meleon-yellow); }
