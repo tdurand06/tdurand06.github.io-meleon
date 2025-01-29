@@ -43,6 +43,35 @@
   --font-secondary: 'Montserrat Light', sans-serif;
 }
 
+/* Logo Styles 
+.logo {
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo-default {
+    background-image: url('../images/logos/meleon_logo.svg');
+}
+
+.logo-white {
+    background-image: url('../images/logos/meleon_logo_white.svg');
+}
+
+.logo-black {
+    background-image: url('../images/logos/meleon_logo_black.svg');
+}
+
+/* Optional: if you need versions with backgrounds */
+.logo-black-white-bg {
+    background-image: url('../images/logos/meleon_logo_black_white_bg.svg');
+}
+
+.logo-white-black-bg {
+    background-image: url('../images/logos/meleon_logo_white_black_bg.svg');
+}
+
 /* Gradient Variations */
 .gradient-bg {
   background: linear-gradient(335deg, var(--meleon-green) 0%, var(--meleon-yellow) 100%);
