@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meleon - Smart Control Systems</title>
     
-    <!-- Core Stylesheets -->
+    <!-- Core Stylesheets: Tailwind for utility classes, custom styles, and Montserrat font -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Animation Libraries -->
+    <!-- Animation Libraries: AOS for scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Add Alpine.js for mobile menu handling -->
+    <!-- Alpine.js for reactive components and mobile menu -->
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     
+    <!-- Inline styles for dynamic components -->
     <style>
-        /* Custom Styles */
+        /* Base Styles */
         html {
             scroll-behavior: smooth;
         }
         
-        /* Scroll Progress Bar */
+        /* Scroll Progress Indicator */
         .scroll-progress-container {
             position: fixed;
             top: 0;
@@ -39,52 +40,31 @@
             transition: width 0.1s ease-out;
         }
 
-        /* Card Flip Animations */
-        .perspective {
-            perspective: 1000px;
-        }
-
-        .preserve-3d {
-            transform-style: preserve-3d;
-        }
-
-        .backface-hidden {
-            backface-visibility: hidden;
-        }
-
-        .rotate-y-180 {
-            transform: rotateY(180deg);
-        }
-
-        /* Mobile Menu Animation */
+        /* Mobile Menu Transitions */
         .mobile-menu-enter {
             transform: translateX(100%);
         }
-
         .mobile-menu-enter-active {
             transform: translateX(0%);
             transition: transform 0.3s ease-out;
         }
-
         .mobile-menu-exit {
             transform: translateX(0%);
         }
-
         .mobile-menu-exit-active {
             transform: translateX(100%);
             transition: transform 0.3s ease-in;
         }
     </style>
 </head>
-    
+
 <body class="bg-gray-50" x-data="{ mobileMenuOpen: false, scrollProgress: 0 }">
-    <!-- Scroll Progress Bar -->
+    <!-- Scroll Progress Indicator - Fixed at top -->
     <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" 
-             x-bind:style="'width: ' + scrollProgress + '%'"></div>
+        <div class="scroll-progress-bar" x-bind:style="'width: ' + scrollProgress + '%'"></div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Navigation Menu - Overlays main content on small screens -->
     <div class="md:hidden fixed inset-0 bg-black bg-opacity-50 transition-opacity z-50"
          x-show="mobileMenuOpen"
          x-transition:enter="transition-opacity ease-out duration-300"
@@ -95,7 +75,6 @@
          x-transition:leave-end="opacity-0"
          @click="mobileMenuOpen = false">
         
-        <!-- Mobile Menu Panel -->
         <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl"
              @click.stop
              x-show="mobileMenuOpen"
@@ -103,6 +82,7 @@
              x-transition:exit="mobile-menu-exit-active">
             
             <div class="p-6">
+                <!-- Mobile Menu Header with Logo -->
                 <div class="flex items-center justify-between mb-8">
                     <div class="logo logo-black h-8 w-32" role="img" aria-label="Meleon Logo"></div>
                     <button @click="mobileMenuOpen = false" class="text-gray-500">
@@ -112,6 +92,7 @@
                     </button>
                 </div>
                 
+                <!-- Mobile Navigation Links -->
                 <nav class="space-y-6">
                     <a href="#solutions" @click="mobileMenuOpen = false" 
                        class="block text-lg text-meleon-primary hover:text-meleon-medium transition-colors">
@@ -135,17 +116,16 @@
         </div>
     </div>
 
-    <!-- Fixed Navigation Bar -->
+    <!-- Main Navigation - Fixed at top -->
     <nav class="fixed w-full bg-white shadow-lg z-40">
         <div class="container mx-auto px-4 py-3 md:py-4">
             <div class="flex items-center justify-between">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <div class="logo logo-black h-8 w-32"
-                        role="img"
-                        aria-label="Meleon Logo">
-                    </div>
+                    <div class="logo logo-black h-12 md:h-16 w-48" role="img" aria-label="Meleon Logo"></div>
                 </div>
                 
+                <!-- Desktop Navigation Links -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#solutions" class="text-meleon-primary hover:text-meleon-medium transition-colors">
                         Solutions
@@ -162,6 +142,7 @@
                     </a>
                 </div>
                 
+                <!-- Mobile Menu Trigger -->
                 <button class="md:hidden text-meleon-primary" @click="mobileMenuOpen = true">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -172,18 +153,21 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Enhanced Gradient -->
+    <!-- Hero Section -->
     <section class="min-h-screen pt-20 pb-32 gradient-bg">
         <div class="container mx-auto px-4 text-center h-full">
             <div class="mt-16 flex flex-col min-h-[500px]" data-aos="fade-up">
+                <!-- Hero Logo -->
                 <div class="logo logo-white w-64 md:w-96 h-32 mx-auto mb-12 transform hover:scale-105 transition-transform duration-300"
-                    role="img"
-                    aria-label="Meleon Logo">
-                 </div>
+                     role="img" 
+                     aria-label="Meleon Logo">
+                </div>
+                
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-24">
                     Un contrôleur d'énergie intelligent
                 </h1>
                 
+                <!-- Hero Subtitle -->
                 <div class="mt-auto">
                     <p class="text-xl md:text-2xl text-gray-200 italic relative">
                         <span class="absolute left-1/2 -top-4 w-16 h-px bg-gray-400 transform -translate-x-1/2"></span>
@@ -194,62 +178,18 @@
         </div>
     </section>
 
-    <!-- Solutions Section with Card Animations -->
-    <section id="solutions" class="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-8" data-aos="fade-up">
-                Nos Solutions
-            </h2>
-            <p class="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up">
-                Un contrôleur complet et universel permettant une exploitation et une maintenance 
-                simple et paramétrable de systèmes de production d'énergie
-            </p>
-            
-            <!-- Triangle Layout with Hover Effects -->
-            <div class="flex flex-col items-center space-y-12">
-                <!-- Top Solution -->
-                <div class="transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg p-6"
-                     data-aos="fade-down">
-                    <img src="images/Support.png" alt="Support" class="w-96 h-96 object-contain mb-6">
-                    <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
-                        Support au contrôleur existant
-                    </h3>
-                </div>
-                
-                <!-- Bottom Solutions -->
-                <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-24">
-                    <div class="transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg p-6"
-                         data-aos="fade-right">
-                        <img src="images/Remplacement.png" alt="Remplacement" class="w-96 h-96 object-contain mb-6">
-                        <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
-                            Remplacement du contrôleur existant
-                        </h3>
-                    </div>
-                    
-                    <div class="transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg p-6"
-                         data-aos="fade-left">
-                        <img src="images/Supervision.png" alt="Supervision" class="w-96 h-96 object-contain mb-6">
-                        <h3 class="text-xl font-semibold text-meleon-primary text-center mb-4">
-                            Ajout d'un contrôleur de supervision
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Notre Produit Section with Enhanced Layout -->
+    <!-- Product Section - Showcases main features and benefits -->
     <section id="notre-produit" class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
                 Notre Produit
             </h2>
             
-            <!-- Dashboard Section -->
+            <!-- Dashboard Overview - Main product visualization -->
             <div class="mb-20" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-meleon-primary text-center mb-8">Dashboard</h3>
                 <div class="max-w-5xl mx-auto transform transition-all duration-300 hover:scale-105">
-                    <img src="images/Dashboard.png" alt="Dashboard" class="w-full rounded-lg shadow-xl mb-8">
+                    <img src="images/Dashboard.png" alt="Dashboard Interface" class="w-full rounded-lg shadow-xl mb-8">
                     <p class="text-xl text-gray-700 text-center italic">
                         Un système unique pour tous vos besoins en contrôle, monitoring, analyse de la performance, 
                         stockage de données et GMAO
@@ -257,22 +197,24 @@
                 </div>
             </div>
 
-            <!-- Paramétrage Section -->
+            <!-- Control Configuration Section - Technical features -->
             <div class="mb-16">
                 <h3 class="text-3xl font-bold text-meleon-primary text-center mb-8" data-aos="fade-up">
                     Paramétrage du contrôle
                 </h3>
+                <!-- Two-column layout for protocol and regulation images -->
                 <div class="grid md:grid-cols-2 gap-12" data-aos="fade-up">
                     <div class="transform transition-all duration-300 hover:scale-105">
-                        <img src="images/Protocol.png" alt="Protocol" class="w-full rounded-lg shadow-xl">
+                        <img src="images/Protocol.png" alt="Protocol Interface" class="w-full rounded-lg shadow-xl">
                     </div>
                     <div class="transform transition-all duration-300 hover:scale-105">
-                        <img src="images/Regulation.png" alt="Regulation" class="w-full rounded-lg shadow-xl">
+                        <img src="images/Regulation.png" alt="Regulation Interface" class="w-full rounded-lg shadow-xl">
                     </div>
                 </div>
                 
-                <!-- Creative Text Layout -->
+                <!-- Feature Cards - Three-column grid on desktop -->
                 <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Integration Card -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
                                 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
                         <p class="text-lg text-gray-700">
@@ -280,6 +222,7 @@
                             et les systèmes SCADA traditionnels.
                         </p>
                     </div>
+                    <!-- Transparency Card -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
                                 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
                         <p class="text-lg text-gray-700">
@@ -287,6 +230,7 @@
                             maintenance simplifiée
                         </p>
                     </div>
+                    <!-- Flexibility Card -->
                     <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
                                 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
                         <p class="text-lg text-gray-700">
@@ -299,21 +243,21 @@
         </div>
     </section>
 
-    <!-- Solutions Comparison Section with Enhanced Title -->
+    <!-- Solutions Comparison Section - Contrasts traditional vs Meleon approach -->
     <section class="py-20 bg-gradient-to-b from-white to-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
                 Meleon, ayez plus de contrôle sur votre contrôle
             </h2>
             
-            <!-- Traditional Solution -->
+            <!-- Traditional Solutions Card -->
             <div class="mb-16">
                 <h3 class="text-3xl font-bold text-center text-meleon-primary mb-8" data-aos="fade-up">
                     Solutions Traditionnelles
                 </h3>
                 <div class="rounded-lg overflow-hidden shadow-xl border-1 border-meleon-primary max-w-4xl mx-auto 
                             transform transition-all duration-300 hover:scale-105" data-aos="fade-right">
-                    <img src="images/Solution-mauvaise-sans-Meleon.png" alt="Solution Traditionnelle" class="w-full">
+                    <img src="images/Solution-mauvaise-sans-Meleon.png" alt="Solutions Traditionnelles" class="w-full">
                     <div class="p-6 bg-white">
                         <ul class="space-y-3 text-gray-600">
                             <li class="flex items-center">
@@ -333,7 +277,7 @@
                 </div>
             </div>
     
-            <!-- Meleon Solution -->
+            <!-- Meleon Solution Card -->
             <div>
                 <h3 class="text-3xl font-bold text-center text-meleon-primary mb-8" data-aos="fade-up">
                     La Solution Meleon
@@ -362,25 +306,22 @@
         </div>
     </section>
 
-    <!-- Experts Section -->
+    <!-- Team Section - Showcases expertise and experience -->
     <section id="experts" class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
                 Nos Experts
             </h2>
             
-            <!-- Expert Cards Container - Using flex-col for vertical stacking -->
+            <!-- Expert Cards Container - Vertical stack on mobile, alternating layout on desktop -->
             <div class="flex flex-col space-y-12 max-w-6xl mx-auto">
                 
-                <!-- Expert 1 - Quentin (Left-aligned) -->
+                <!-- Expert 1 - Control Systems Specialist -->
                 <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                        <!-- Image on the left -->
                         <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <img src="images/Quentin.png" alt="Quentin" 
-                                 class="w-full rounded-lg shadow-md">
+                            <img src="images/Quentin.png" alt="Quentin" class="w-full rounded-lg shadow-md">
                         </div>
-                        <!-- Text content -->
                         <div class="flex-1 text-center md:text-left">
                             <h3 class="text-2xl font-bold text-meleon-primary mb-3">Quentin CRAMBES</h3>
                             <p class="font-semibold text-gray-700 mb-3">
@@ -393,15 +334,12 @@
                     </div>
                 </div>
     
-                <!-- Expert 2 - Hadrien (Right-aligned) -->
+                <!-- Expert 2 - Development Lead -->
                 <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-6">
-                        <!-- Image on the right -->
                         <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <img src="images/Hadrien.png" alt="Hadrien" 
-                                 class="w-full rounded-lg shadow-md">
+                            <img src="images/Hadrien.png" alt="Hadrien" class="w-full rounded-lg shadow-md">
                         </div>
-                        <!-- Text content -->
                         <div class="flex-1 text-center md:text-right">
                             <h3 class="text-2xl font-bold text-meleon-primary mb-3">Hadrien LIGNIERES</h3>
                             <p class="font-semibold text-gray-700 mb-3">
@@ -414,15 +352,12 @@
                     </div>
                 </div>
     
-                <!-- Expert 3 - Loic (Left-aligned) -->
+                <!-- Expert 3 - Systems Architect -->
                 <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                        <!-- Image on the left -->
                         <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <img src="images/Loic.png" alt="Loic" 
-                                 class="w-full rounded-lg shadow-md">
+                            <img src="images/Loic.png" alt="Loic" class="w-full rounded-lg shadow-md">
                         </div>
-                        <!-- Text content -->
                         <div class="flex-1 text-center md:text-left">
                             <h3 class="text-2xl font-bold text-meleon-primary mb-3">Loic GUIHENEUF</h3>
                             <p class="font-semibold text-gray-700 mb-3">
@@ -435,15 +370,12 @@
                     </div>
                 </div>
     
-                <!-- Expert 4 - Pierre (Right-aligned) -->
+                <!-- Expert 4 - Electronics & IT -->
                 <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                     <div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-6">
-                        <!-- Image on the right -->
                         <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <img src="images/meleon-logo-black-transp.png" alt="Pierre" 
-                                 class="w-full rounded-lg shadow-md">
+                            <div class="logo logo-black w-full h-64 rounded-lg shadow-md" role="img" aria-label="Pierre"></div>
                         </div>
-                        <!-- Text content -->
                         <div class="flex-1 text-center md:text-right">
                             <h3 class="text-2xl font-bold text-meleon-primary mb-3">PIERRE SCHAMBERGER</h3>
                             <p class="font-semibold text-gray-700 mb-3">
@@ -459,7 +391,7 @@
         </div>
     </section>
 
-    <!-- Footer with ISO image and copyright -->
+    <!-- Footer Section -->
     <footer class="bg-white py-8 border-t border-gray-200">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
@@ -469,17 +401,17 @@
         </div>
     </footer>
 
-    <!-- Initialize AOS -->
+    <!-- JavaScript Initialization -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
+        // Initialize AOS animation library
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100
         });
 
-        // Scroll Progress Handler
+        // Handle scroll progress indicator
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
