@@ -250,177 +250,23 @@
             </div>
         </div>
     </section>
-
-    <section class="py-20 bg-gradient-to-b from-gray-50 to-white" x-data="{ activeSpec: 'system' }">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">
-                Spécifications Techniques
-            </h2>
-    
-            <!-- Specification Navigation -->
-            <div class="flex justify-center space-x-4 mb-12 overflow-x-auto">
-                <button @click="activeSpec = 'system'" 
-                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'system',
-                                 'bg-white text-meleon-primary': activeSpec !== 'system' }"
-                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
-                    Système
-                </button>
-                <button @click="activeSpec = 'connectivity'"
-                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'connectivity',
-                                 'bg-white text-meleon-primary': activeSpec !== 'connectivity' }"
-                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
-                    Connectivité
-                </button>
-                <button @click="activeSpec = 'performance'"
-                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'performance',
-                                 'bg-white text-meleon-primary': activeSpec !== 'performance' }"
-                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
-                    Performance
-                </button>
-                <button @click="activeSpec = 'physical'"
-                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'physical',
-                                 'bg-white text-meleon-primary': activeSpec !== 'physical' }"
-                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
-                    Caractéristiques Physiques
-                </button>
-            </div>
-    
-            <!-- Specification Content -->
-            <div class="max-w-4xl mx-auto">
-                <!-- System Specifications -->
-                <div x-show="activeSpec === 'system'"
-                     x-transition:enter="transition ease-out duration-300"
-                     x-transition:enter-start="opacity-0 transform translate-y-4"
-                     x-transition:enter-end="opacity-100 transform translate-y-0"
-                     class="grid md:grid-cols-2 gap-8">
-                    
-                    <!-- Operating System -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Système d'exploitation</h3>
-                        <p class="text-gray-600">Linux Debian</p>
-                    </div>
-    
-                    <!-- CPU -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Processeur</h3>
-                        <p class="text-gray-600">Broadcom BCM2711</p>
-                        <ul class="text-gray-600 mt-2 space-y-1">
-                            <li>• Quad-core Cortex-A72</li>
-                            <li>• Architecture ARM v8 64-bit</li>
-                            <li>• Fréquence : 1.5GHz</li>
-                        </ul>
-                    </div>
-    
-                    <!-- Memory -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Mémoire RAM</h3>
-                        <p class="text-gray-600">2GB LPDDR4-3200 SDRAM</p>
-                    </div>
-    
-                    <!-- Storage -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Stockage</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>• Interne : 8GB eMMC Flash</li>
-                            <li>• Externe : Extension via USB</li>
-                        </ul>
-                    </div>
-    
-                    <!-- Power -->
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Alimentation</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>• Principal : 5Vdc 1A</li>
-                            <li>• Options : 110-230Vac ou 12-24Vdc</li>
-                        </ul>
-                    </div>
-                </div>
-    
-                <!-- Connectivity Specifications -->
-                <div x-show="activeSpec === 'connectivity'"
-                     x-transition:enter="transition ease-out duration-300"
-                     x-transition:enter-start="opacity-0 transform translate-y-4"
-                     x-transition:enter-end="opacity-100 transform translate-y-0"
-                     class="grid md:grid-cols-2 gap-8">
-                    
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Interfaces</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>• 1x Ethernet</li>
-                            <li>• 1x CAN</li>
-                            <li>• 2x RS485</li>
-                            <li>• 2x USB</li>
-                        </ul>
-                    </div>
-    
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Sans Fil</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>• Bluetooth 5.0</li>
-                            <li>• Option 4G/5G</li>
-                        </ul>
-                    </div>
-                </div>
-    
-                <!-- Performance Specifications -->
-                <div x-show="activeSpec === 'performance'"
-                     x-transition:enter="transition ease-out duration-300"
-                     x-transition:enter-start="opacity-0 transform translate-y-4"
-                     x-transition:enter-end="opacity-100 transform translate-y-0"
-                     class="grid md:grid-cols-2 gap-8">
-                    
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Capacités</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>• Jusqu'à 250 canaux en temps réel</li>
-                            <li>• Rafraîchissement : 1 seconde minimum</li>
-                            <li>• Fréquence de stockage : 5 secondes minimum</li>
-                        </ul>
-                    </div>
-                </div>
-    
-                <!-- Physical Specifications -->
-                <div x-show="activeSpec === 'physical'"
-                     x-transition:enter="transition ease-out duration-300"
-                     x-transition:enter-start="opacity-0 transform translate-y-4"
-                     x-transition:enter-end="opacity-100 transform translate-y-0"
-                     class="grid md:grid-cols-2 gap-8">
-                    
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Dimensions</h3>
-                        <p class="text-gray-600">130 x 80 x 35 mm (L x H x P)</p>
-                    </div>
-    
-                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Caractéristiques</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li>• Poids : 350g</li>
-                            <li>• Protection : IP20</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section class="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        
+    <!-- Product Section - Technical specs -->
+    <section id="specs" class="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <!-- Decorative background elements -->
         <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-            <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-meleon-green/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-meleon-yellow/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-meleon-sage/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
     
         <div class="container mx-auto px-4 relative">
             <!-- Section Header -->
             <div class="max-w-3xl mx-auto text-center mb-20">
-                <h2 class="text-4xl font-bold tracking-tight text-gray-900 mb-6">
-                    <span class="inline-block transform hover:scale-105 transition-transform duration-300">
-                        Une Technologie de Pointe
-                    </span>
+                <h2 class="text-4xl font-bold tracking-tight text-meleon-primary mb-6">
+                    Une Technologie de Pointe
                 </h2>
-                <p class="text-lg text-gray-600">Découvrez notre système innovant qui redéfinit les standards technologiques</p>
+                <p class="text-lg text-gray-600">Un système intelligent conçu pour optimiser vos ressources énergétiques</p>
             </div>
     
             <!-- Main Features Grid -->
@@ -428,77 +274,89 @@
                 <!-- System Core Card -->
                 <div class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                     <div class="relative p-8">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-meleon-green/5 to-meleon-yellow/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="relative">
-                            <div class="flex items-center space-x-4 mb-6">
-                                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div class="flex items-center space-x-4 mb-8">
+                                <div class="w-12 h-12 rounded-lg bg-meleon-green/10 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-semibold text-gray-900">Processeur & Mémoire</h3>
+                                <h3 class="text-xl font-semibold text-meleon-primary">Système & Stockage</h3>
                             </div>
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-gray-600">Processeur</span>
-                                    <span class="text-gray-900 font-medium">BCM2711 quad-core 1.5GHz</span>
+                            <div class="space-y-6">
+                                <div class="flex justify-between items-start">
+                                    <div class="space-y-1">
+                                        <span class="text-sm text-gray-500">Système d'exploitation</span>
+                                        <p class="text-gray-900 font-medium">Linux Debian</p>
+                                    </div>
+                                    <div class="space-y-1 text-right">
+                                        <span class="text-sm text-gray-500">CPU</span>
+                                        <p class="text-gray-900 font-medium">BCM2711 64-bit @ 1.5GHz</p>
+                                    </div>
                                 </div>
-                                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                                    <div class="w-3/4 h-full bg-gradient-to-r from-blue-500 to-purple-500 transform origin-left hover:scale-x-105 transition-transform duration-500"></div>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <span class="text-gray-600">Mémoire RAM</span>
-                                    <span class="text-gray-900 font-medium">2GB LPDDR4-3200</span>
-                                </div>
-                                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                                    <div class="w-2/3 h-full bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left hover:scale-x-105 transition-transform duration-500"></div>
+                                <div class="flex justify-between items-start">
+                                    <div class="space-y-1">
+                                        <span class="text-sm text-gray-500">RAM</span>
+                                        <p class="text-gray-900 font-medium">2GB LPDDR4-3200</p>
+                                    </div>
+                                    <div class="space-y-1 text-right">
+                                        <span class="text-sm text-gray-500">Stockage interne</span>
+                                        <p class="text-gray-900 font-medium">8GB eMMC Flash</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
     
-                <!-- Connectivity Card -->
+                <!-- Smart Control Features -->
                 <div class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                     <div class="relative p-8">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-meleon-sage/5 to-meleon-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="relative">
-                            <div class="flex items-center space-x-4 mb-6">
-                                <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                            <div class="flex items-center space-x-4 mb-8">
+                                <div class="w-12 h-12 rounded-lg bg-meleon-sage/10 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-semibold text-gray-900">Connectivité</h3>
+                                <h3 class="text-xl font-semibold text-meleon-primary">Fonctions Intelligentes</h3>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="space-y-2">
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-                                        <span class="text-gray-600">Ethernet</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-                                        <span class="text-gray-600">RS485</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-                                        <span class="text-gray-600">USB</span>
-                                    </div>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-sm font-medium text-meleon-primary mb-3">Réseau / AC Thermique</h4>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center text-sm text-gray-600">
+                                            <span class="w-2 h-2 bg-meleon-green rounded-full mr-2"></span>
+                                            Anti-retour réseau
+                                        </li>
+                                        <li class="flex items-center text-sm text-gray-600">
+                                            <span class="w-2 h-2 bg-meleon-green rounded-full mr-2"></span>
+                                            Import/export minimum
+                                        </li>
+                                        <li class="flex items-center text-sm text-gray-600">
+                                            <span class="w-2 h-2 bg-meleon-green rounded-full mr-2"></span>
+                                            Hybridation multi-sources
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="space-y-2">
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-2 h-2 rounded-full bg-pink-500"></div>
-                                        <span class="text-gray-600">Bluetooth 5.0</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-2 h-2 rounded-full bg-pink-500"></div>
-                                        <span class="text-gray-600">4G/5G</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-2 h-2 rounded-full bg-pink-500"></div>
-                                        <span class="text-gray-600">Wi-Fi 6</span>
-                                    </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-meleon-primary mb-3">Gestion Batteries</h4>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center text-sm text-gray-600">
+                                            <span class="w-2 h-2 bg-meleon-sage rounded-full mr-2"></span>
+                                            Démarrage automatique
+                                        </li>
+                                        <li class="flex items-center text-sm text-gray-600">
+                                            <span class="w-2 h-2 bg-meleon-sage rounded-full mr-2"></span>
+                                            Peak shaving
+                                        </li>
+                                        <li class="flex items-center text-sm text-gray-600">
+                                            <span class="w-2 h-2 bg-meleon-sage rounded-full mr-2"></span>
+                                            Load-shifting 3 tarifs
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -507,27 +365,33 @@
             </div>
     
             <!-- Performance Metrics -->
-            <div class="max-w-5xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-lg p-8 mb-24">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-8 text-center">Performance en Temps Réel</h3>
-                    <div class="grid grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-blue-100 flex items-center justify-center group hover:border-blue-200 transition-colors duration-300">
-                                <span class="text-2xl font-bold text-blue-600 group-hover:scale-110 transition-transform duration-300">250</span>
+            <div class="max-w-5xl mx-auto mb-24">
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-xl font-semibold text-meleon-primary mb-8 text-center">Performance & Connectivité</h3>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="text-center group">
+                            <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-meleon-green/20 flex items-center justify-center group-hover:border-meleon-green/40 transition-colors duration-300">
+                                <span class="text-xl font-bold text-meleon-primary group-hover:scale-110 transition-transform duration-300">250</span>
                             </div>
-                            <p class="text-gray-600">Canaux Simultanés</p>
+                            <p class="text-sm text-gray-600">Canaux en temps réel</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-purple-100 flex items-center justify-center group hover:border-purple-200 transition-colors duration-300">
-                                <span class="text-2xl font-bold text-purple-600 group-hover:scale-110 transition-transform duration-300">1s</span>
+                        <div class="text-center group">
+                            <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-meleon-sage/20 flex items-center justify-center group-hover:border-meleon-sage/40 transition-colors duration-300">
+                                <span class="text-xl font-bold text-meleon-primary group-hover:scale-110 transition-transform duration-300">1s</span>
                             </div>
-                            <p class="text-gray-600">Rafraîchissement</p>
+                            <p class="text-sm text-gray-600">Rafraîchissement</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-24 h-24 mx-auto mb-4 rounded-full border-4 border-pink-100 flex items-center justify-center group hover:border-pink-200 transition-colors duration-300">
-                                <span class="text-2xl font-bold text-pink-600 group-hover:scale-110 transition-transform duration-300">99.9%</span>
+                        <div class="text-center group">
+                            <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-meleon-yellow/20 flex items-center justify-center group-hover:border-meleon-yellow/40 transition-colors duration-300">
+                                <span class="text-xl font-bold text-meleon-primary group-hover:scale-110 transition-transform duration-300">5s</span>
                             </div>
-                            <p class="text-gray-600">Disponibilité</p>
+                            <p class="text-sm text-gray-600">Stockage minimum</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-meleon-green/20 flex items-center justify-center group-hover:border-meleon-green/40 transition-colors duration-300">
+                                <span class="text-xl font-bold text-meleon-primary group-hover:scale-110 transition-transform duration-300">7+</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Ports de connexion</p>
                         </div>
                     </div>
                 </div>
@@ -537,43 +401,48 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
-                            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="w-10 h-10 rounded-lg bg-meleon-green/10 flex items-center justify-center group-hover:bg-meleon-green/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-semibold text-gray-900">Dimensions</h4>
+                        <div>
+                            <h4 class="text-lg font-semibold text-meleon-primary">Dimensions</h4>
+                            <p class="text-gray-600">130 x 80 x 35 mm</p>
+                        </div>
                     </div>
-                    <p class="text-gray-600">130 x 80 x 35 mm</p>
                 </div>
     
                 <div class="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
-                            <svg class="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="w-10 h-10 rounded-lg bg-meleon-sage/10 flex items-center justify-center group-hover:bg-meleon-sage/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2M6 7l-3-1" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-semibold text-gray-900">Poids</h4>
+                        <div>
+                            <h4 class="text-lg font-semibold text-meleon-primary">Poids</h4>
+                            <p class="text-gray-600">350g</p>
+                        </div>
                     </div>
-                    <p class="text-gray-600">350g</p>
                 </div>
     
                 <div class="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center group-hover:bg-pink-200 transition-colors duration-300">
-                            <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        <div class="w-10 h-10 rounded-lg bg-meleon-yellow/10 flex items-center justify-center group-hover:bg-meleon-yellow/20 transition-colors duration-300">
+                            <svg class="w-5 h-5 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-semibold text-gray-900">Protection</h4>
+                        <div>
+                            <h4 class="text-lg font-semibold text-meleon-primary">Alimentation</h4>
+                            <p class="text-gray-600">5Vdc 1A / 110-230Vac</p>
+                        </div>
                     </div>
-                    <p class="text-gray-600">IP20</p>
                 </div>
             </div>
         </div>
     </section>
-
 
                 
     <!-- Solutions Comparison Section - Contrasts traditional vs Meleon approach -->
