@@ -481,15 +481,145 @@
                         </div>
                     </div>
                 </div>
+            <!-- Connectivity Hub -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-20 transform transition-all duration-300 hover:shadow-xl">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Visual Side -->
+                    <div class="relative">
+                        <div class="aspect-square relative">
+                            <!-- Center Circle -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+                                        w-32 h-32 bg-meleon-green/10 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                            </div>
+                            
+                            <!-- Connection Points with Animated Lines -->
+                            <div class="absolute inset-0">
+                                <!-- USB Connection -->
+                                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                                    <div class="w-16 h-16 bg-meleon-yellow/10 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                        </svg>
+                                    </div>
+                                    <div class="h-16 w-px bg-gradient-to-b from-meleon-yellow to-transparent"></div>
+                                </div>
+            
+                                <!-- Ethernet Connection -->
+                                <div class="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 flex items-center">
+                                    <div class="w-16 h-16 bg-meleon-green/10 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                        </svg>
+                                    </div>
+                                    <div class="w-16 h-px bg-gradient-to-r from-transparent to-meleon-green"></div>
+                                </div>
+            
+                                <!-- RS485 Connection -->
+                                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                                    <div class="h-16 w-px bg-gradient-to-t from-meleon-green-medium to-transparent"></div>
+                                    <div class="w-16 h-16 bg-meleon-green-medium/10 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+            
+                                <!-- Wireless Connection -->
+                                <div class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 flex items-center">
+                                    <div class="w-16 h-16 bg-meleon-sage/10 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                                        </svg>
+                                    </div>
+                                    <div class="w-16 h-px bg-gradient-to-l from-transparent to-meleon-sage"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Specs Side -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-meleon-primary mb-6">Hub de Connectivité</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-meleon-yellow/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-meleon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-meleon-green-dark mb-2">Communications Filaires</h4>
+                                    <div class="space-y-2 text-gray-600">
+                                        <p>• 1x Ethernet pour connexion réseau</p>
+                                        <p>• 2x RS485 pour équipements industriels</p>
+                                        <p>• 1x CAN pour bus de terrain</p>
+                                        <p>• 2x USB pour extensions</p>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-meleon-green/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-meleon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-meleon-green-dark mb-2">Communications Sans Fil</h4>
+                                    <div class="space-y-2 text-gray-600">
+                                        <p>• Bluetooth 5.0 intégré</p>
+                                        <p>• Option 4G/5G disponible</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Physical Characteristics -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-meleon-green/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-meleon-primary mb-4">Dimensions</h3>
+                    <p class="text-gray-600">130 x 80 x 35 mm</p>
+                    <p class="text-sm text-gray-500 mt-2">Format compact pour une intégration facile</p>
+                </div>
+            
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-meleon-yellow/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2M6 7l-3-1m3 1l3 9a5.002 5.002 0 006.001 0M18 7l-3 9m3-9l3 1" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-meleon-primary mb-4">Poids</h3>
+                    <p class="text-gray-600">350g</p>
+                    <p class="text-sm text-gray-500 mt-2">Léger et robuste</p>
+                </div>
+            
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="w-16 h-16 bg-meleon-sage/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-meleon-primary mb-4">Protection</h3>
+                    <p class="text-gray-600">IP20</p>
+                    <p class="text-sm text-gray-500 mt-2">Protection adaptée aux environnements industriels</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Would you like me to continue with the other sections? This redesign uses:
-            1. Visual hierarchy with icons and decorative elements
-            2. Engaging color combinations from your palette
-            3. Interactive hover effects
-            4. Clear information grouping
-            5. Modern, clean layout
 
-            I can complete the connectivity and physical specifications sections with similar visual treatment. -->
+                
     <!-- Solutions Comparison Section - Contrasts traditional vs Meleon approach -->
     <section class="py-20 bg-gradient-to-b from-white to-gray-50">
         <div class="container mx-auto px-4">
