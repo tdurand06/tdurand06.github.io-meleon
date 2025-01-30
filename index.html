@@ -242,6 +242,157 @@
             </div>
         </div>
     </section>
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white" x-data="{ activeSpec: 'system' }">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16">
+                Spécifications Techniques
+            </h2>
+    
+            <!-- Specification Navigation -->
+            <div class="flex justify-center space-x-4 mb-12 overflow-x-auto">
+                <button @click="activeSpec = 'system'" 
+                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'system',
+                                 'bg-white text-meleon-primary': activeSpec !== 'system' }"
+                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
+                    Système
+                </button>
+                <button @click="activeSpec = 'connectivity'"
+                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'connectivity',
+                                 'bg-white text-meleon-primary': activeSpec !== 'connectivity' }"
+                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
+                    Connectivité
+                </button>
+                <button @click="activeSpec = 'performance'"
+                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'performance',
+                                 'bg-white text-meleon-primary': activeSpec !== 'performance' }"
+                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
+                    Performance
+                </button>
+                <button @click="activeSpec = 'physical'"
+                        :class="{ 'bg-meleon-primary text-white': activeSpec === 'physical',
+                                 'bg-white text-meleon-primary': activeSpec !== 'physical' }"
+                        class="px-6 py-3 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
+                    Caractéristiques Physiques
+                </button>
+            </div>
+    
+            <!-- Specification Content -->
+            <div class="max-w-4xl mx-auto">
+                <!-- System Specifications -->
+                <div x-show="activeSpec === 'system'"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                     class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Operating System -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Système d'exploitation</h3>
+                        <p class="text-gray-600">Linux Debian</p>
+                    </div>
+    
+                    <!-- CPU -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Processeur</h3>
+                        <p class="text-gray-600">Broadcom BCM2711</p>
+                        <ul class="text-gray-600 mt-2 space-y-1">
+                            <li>• Quad-core Cortex-A72</li>
+                            <li>• Architecture ARM v8 64-bit</li>
+                            <li>• Fréquence : 1.5GHz</li>
+                        </ul>
+                    </div>
+    
+                    <!-- Memory -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Mémoire RAM</h3>
+                        <p class="text-gray-600">2GB LPDDR4-3200 SDRAM</p>
+                    </div>
+    
+                    <!-- Storage -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Stockage</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Interne : 8GB eMMC Flash</li>
+                            <li>• Externe : Extension via USB</li>
+                        </ul>
+                    </div>
+    
+                    <!-- Power -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Alimentation</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Principal : 5Vdc 1A</li>
+                            <li>• Options : 110-230Vac ou 12-24Vdc</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Connectivity Specifications -->
+                <div x-show="activeSpec === 'connectivity'"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                     class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Interfaces</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• 1x Ethernet</li>
+                            <li>• 1x CAN</li>
+                            <li>• 2x RS485</li>
+                            <li>• 2x USB</li>
+                        </ul>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Sans Fil</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Bluetooth 5.0</li>
+                            <li>• Option 4G/5G</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Performance Specifications -->
+                <div x-show="activeSpec === 'performance'"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                     class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Capacités</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Jusqu'à 250 canaux en temps réel</li>
+                            <li>• Rafraîchissement : 1 seconde minimum</li>
+                            <li>• Fréquence de stockage : 5 secondes minimum</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Physical Specifications -->
+                <div x-show="activeSpec === 'physical'"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                     class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Dimensions</h3>
+                        <p class="text-gray-600">130 x 80 x 35 mm (L x H x P)</p>
+                    </div>
+    
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-meleon-primary">Caractéristiques</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Poids : 350g</li>
+                            <li>• Protection : IP20</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Solutions Comparison Section - Contrasts traditional vs Meleon approach -->
     <section class="py-20 bg-gradient-to-b from-white to-gray-50">
