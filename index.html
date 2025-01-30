@@ -157,7 +157,7 @@
          x-data="{ mouseX: 0, mouseY: 0 }" 
          @mousemove="mouseX = $event.clientX; mouseY = $event.clientY">
         <!-- Background Gradient with Subtle Animation -->
-        <div class="absolute inset-0 bg-gradient-to-br from-meleon-green via-meleon-green-dark to-meleon-green-darkest"
+        <div class="absolute inset-0 gradient-bg"
              :style="`background-position: ${mouseX/50}px ${mouseY/50}px`">
         </div>
     
