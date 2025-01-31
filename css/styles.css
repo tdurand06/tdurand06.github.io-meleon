@@ -149,3 +149,43 @@
 .animation-delay-4000 {
     animation-delay: 4s;
 }
+
+
+/* Add these styles to your existing CSS file */
+/* Animation for section header underline */
+.text-4xl .h-1 {
+    animation: expandWidth 1s ease-out forwards;
+    width: 0;
+}
+
+@keyframes expandWidth {
+    from { width: 0; }
+    to { width: 6rem; }
+}
+
+/* Enhance existing hover transitions */
+.hover\:-translate-y-2:hover {
+    transform: translateY(-0.5rem);
+}
+
+/* Gradient animation */
+.from-meleon-green {
+    background-size: 200% auto;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Decorative elements animation */
+.blur-3xl {
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
