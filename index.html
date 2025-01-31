@@ -153,15 +153,18 @@
         </div>
     </nav>
 
-    <section class="min-h-screen relative overflow-hidden gradient-bg-smooth" 
+    <section class="min-h-screen relative overflow-hidden gradient-bg" 
              x-data="{ mouseX: 0, mouseY: 0 }" 
              @mousemove="mouseX = $event.clientX; mouseY = $event.clientY">
     
-    
+        <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent"></div>
+
         <div class="container mx-auto px-4 pt-12">
             <!-- Large prominent logo -->
-            
-            <div class="logo logo-black w-48 h-48" role="img" aria-label="Meleon Logo"></div>
+            <div class="logo logo-white w-[500px] h-48 mx-auto mb-16 transform hover:scale-105 transition-transform duration-300" 
+                 role="img" 
+                 aria-label="Meleon Logo">
+            </div>            
             <!-- Main content with adjusted spacing -->
             <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                 <!-- Left: Text Content -->
