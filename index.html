@@ -153,15 +153,10 @@
         </div>
     </nav>
 
-    <section class="min-h-screen relative overflow-hidden" 
+    <section class="min-h-screen relative overflow-hidden bg-red-500" 
              x-data="{ mouseX: 0, mouseY: 0 }" 
              @mousemove="mouseX = $event.clientX; mouseY = $event.clientY">
-        
-        <!-- Background with gradient confined to a specific area -->
-        <div class="absolute inset-0 bg-meleon-green">
-            <!-- Gradient overlay that doesn't cover the entire background -->
-            <div class="absolute w-full h-[70%] gradient-bg-smooth opacity-80"></div>
-        </div>
+    
     
         <div class="container mx-auto px-4 pt-12">
             <!-- Large prominent logo -->
