@@ -21,6 +21,13 @@
         /* Base Styles */
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 100px; /* Accounts for nav bar on mobile */
+        }
+        
+        @media (min-width: 768px) {
+            html {
+                scroll-padding-top: 120px; /* Slightly larger padding for desktop nav */
+            }
         }
         
         /* Scroll Progress Indicator */
