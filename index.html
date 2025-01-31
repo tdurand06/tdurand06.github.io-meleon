@@ -168,58 +168,57 @@
             <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent"></div>
         </div>
     
-        <!-- Content container -->
-        <div class="relative container mx-auto px-4 min-h-screen flex items-center justify-center pt-20">
-            <!-- Large prominent logo -->
-            <div class="flex justify-center mb-16">
+        <!-- Content container - Changed to flex-col and removed center alignment -->
+        <div class="relative container mx-auto px-4 min-h-screen flex flex-col">
+            <!-- Logo section with increased top padding -->
+            <div class="flex justify-center pt-32 mb-16">
                 <div class="logo logo-white w-96 h-48" role="img" aria-label="Meleon Logo"></div>
             </div>            
-            <!-- Main content with adjusted spacing -->
-            <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-                <!-- Left: Text Content -->
-                <div class="text-left space-y-8">
-                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
-                        Programmez votre contrôle <br>
-                        <span class="text-meleon-yellow">sans expertise</span>
-                    </h1>
-                    
-                    <p class="text-2xl md:text-3xl text-gray-200 max-w-xl">
-                        Le premier contrôleur d'énergie entièrement programmable par l'utilisateur. 
-                        Gardez le contrôle sur vos systèmes sans dépendre d'experts externes.
-                    </p>
     
-                    <div class="flex space-x-6">
-                        <a href="#demo" 
-                           class="bg-meleon-yellow text-meleon-green px-8 py-4 rounded-lg 
-                                  text-xl font-semibold inline-flex items-center group 
-                                  transition-all duration-300 hover:bg-white">
-                            Voir la démo
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                 class="h-6 w-6 ml-2 transform group-hover:translate-x-1 transition-transform" 
-                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                        <a href="#contact" 
-                           class="border-2 border-white text-white px-8 py-4 rounded-lg 
-                                  text-xl font-semibold inline-flex items-center
-                                  transition-all duration-300 hover:bg-white hover:text-meleon-green">
-                            Nous contacter
-                        </a>
-                    </div>
-                </div>
-    
-                <!-- Right: Dashboard Preview -->
-                <div class="relative">
-                    <!-- Dashboard Container with subtle shadow and glow -->
-                    <div class="relative transform hover:scale-[1.02] transition-all duration-500">
-                        <!-- Subtle glow effect -->
-                        <div class="absolute -inset-0.5 bg-meleon-secondary rounded-xl blur"></div>
+            <!-- Main content section - Now using flex-grow to fill remaining space -->
+            <div class="flex-grow flex items-center">
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                    <!-- Left: Text Content -->
+                    <div class="text-left space-y-8">
+                        <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+                            Programmez votre contrôle <br>
+                            <span class="text-meleon-yellow">sans expertise</span>
+                        </h1>
                         
-                        <!-- Dashboard Image -->
-                        <img src="images/Dashboard.png" 
-                             alt="Interface Meleon" 
-                             class="relative rounded-xl shadow-2xl">
+                        <p class="text-2xl md:text-3xl text-gray-200 max-w-xl">
+                            Le premier contrôleur d'énergie entièrement programmable par l'utilisateur. 
+                            Gardez le contrôle sur vos systèmes sans dépendre d'experts externes.
+                        </p>
+    
+                        <div class="flex space-x-6">
+                            <a href="#demo" 
+                               class="bg-meleon-yellow text-meleon-green px-8 py-4 rounded-lg 
+                                      text-xl font-semibold inline-flex items-center group 
+                                      transition-all duration-300 hover:bg-white">
+                                Voir la démo
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                     class="h-6 w-6 ml-2 transform group-hover:translate-x-1 transition-transform" 
+                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <a href="#contact" 
+                               class="border-2 border-white text-white px-8 py-4 rounded-lg 
+                                      text-xl font-semibold inline-flex items-center
+                                      transition-all duration-300 hover:bg-white hover:text-meleon-green">
+                                Nous contacter
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Right: Dashboard Preview -->
+                    <div class="relative">
+                        <div class="relative transform hover:scale-[1.02] transition-all duration-500">
+                            <div class="absolute -inset-0.5 bg-meleon-secondary rounded-xl blur"></div>
+                            <img src="images/Dashboard.png" 
+                                 alt="Interface Meleon" 
+                                 class="relative rounded-xl shadow-2xl">
+                        </div>
                     </div>
                 </div>
             </div>
