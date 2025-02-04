@@ -815,14 +815,14 @@
 <!-- Product Features Section -->
     <section id="fonctionnalites" class="relative py-24 bg-white overflow-hidden">
         <!-- Decorative elements -->
-        <div class="absolute inset-0 pointer-events-none">
-            <svg class="absolute w-full h-full" viewBox="0 0 100 100">
+        <div class="absolute inset-0 w-screen pointer-events-none">
+            <svg class="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
                 <defs>
-                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <pattern id="grid-large" width="20" height="20" patternUnits="userSpaceOnUse">
                         <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(13, 57, 57, 0.03)" stroke-width="0.5"/>
                     </pattern>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#grid)"/>
+                <rect width="100%" height="100%" fill="url(#grid-large)"/>
             </svg>
             <!-- Ajout de points d'intersection -->
             <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -941,17 +941,20 @@
 
     
     <!-- Technical Specifications Section -->
-    <section id="specifications" class="relative min-h-screen py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        <!-- Interactive background elements -->
-        <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute w-full h-full">
-                <svg class="technical-grid" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(13, 57, 57, 0.05)" stroke-width="1"/>
+    <section id="specifications" class="relative min-h-screen py-24 bg-white overflow-hidden">
+        <div class="absolute inset-0 w-screen pointer-events-none">
+            <svg class="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="grid-small" width="8" height="8" patternUnits="userSpaceOnUse">
+                        <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(13, 57, 57, 0.02)" stroke-width="0.5"/>
                     </pattern>
-                    <rect width="100%" height="100%" fill="url(#grid)" />
-                </svg>
-            </div>
+                    <pattern id="dots-small" width="8" height="8" patternUnits="userSpaceOnUse">
+                        <circle cx="8" cy="8" r="0.5" fill="rgba(13, 57, 57, 0.04)"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-small)"/>
+                <rect width="100%" height="100%" fill="url(#dots-small)"/>
+            </svg>
         </div>
     
         <div class="container mx-auto px-4 relative">
