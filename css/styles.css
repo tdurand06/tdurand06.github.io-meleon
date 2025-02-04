@@ -170,26 +170,36 @@
 }
 
 /* Base card styles for all new sections */
-.feature-card {
-  background: var(--card-bg);
-  border-radius: 5px;
+/* Transparent card for gradient sections */
+.feature-card-transparent {
+  background: rgba(255, 255, 255, 0.1);  /* Very subtle white background */
+  backdrop-filter: blur(8px);            /* Adds frosted glass effect */
+  border-radius: 0.75rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);  /* Smooth transition curve */
 }
 
-/* Carte avec élévation au hover */
-.feature-card-hover {
-  background: var(--card-bg);
-  border-radius: 5px;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.feature-card-transparent:hover {
+  transform: translateY(-8px);  /* Increased lift (originally -2px) */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.15);  /* Slightly more opaque on hover */
+}
+
+/* Solid white card for hardware section */
+.feature-card-solid {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.feature-card-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.1);
+.feature-card-solid:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 /*Spacing between sections*/
 .section-spacing {
