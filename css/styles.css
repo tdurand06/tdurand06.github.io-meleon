@@ -162,16 +162,26 @@
 /* Base card styles for all new sections */
 .feature-card {
   background: var(--card-bg);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
 }
 
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+/* Carte avec élévation au hover */
+.feature-card-hover {
+  background: var(--card-bg);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  transition: all 0.3s ease;
 }
+
+.feature-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Icon containers */
 .icon-container {
