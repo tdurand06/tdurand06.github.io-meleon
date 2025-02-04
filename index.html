@@ -160,211 +160,141 @@
         </div>
     </nav>
 
-    <section id="hero" class="relative min-h-screen">
-        <!-- Background container with gradient -->
-        <div class="absolute top-20 inset-x-0 bottom-0 gradient-bg overflow-hidden"
-             x-data="{ mouseX: 0, mouseY: 0 }" 
-             @mousemove="mouseX = $event.clientX; mouseY = $event.clientY">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent"></div>
-        </div>
+    <!-- Main wrapper with continuous gradient background -->
+    <div class="relative overflow-hidden">
+        <!-- Common gradient background for both sections -->
+        <div class="fixed inset-0 gradient-bg-smooth opacity-90 pointer-events-none"></div>
     
-        <!-- Content container - Changed to flex-col and removed center alignment -->
-        <div class="relative container mx-auto px-4 min-h-screen flex flex-col">
-            <!-- Logo section with increased top padding, modify the pt-32 for top padding and mb-16 for bottom padding-->
-            <div class="flex justify-center pt-32 mb-16">
-                <div class="logo logo-white w-96 h-48" role="img" aria-label="Meleon Logo"></div>
-            </div>            
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen">
+            <!-- Content container -->
+            <div class="relative container mx-auto px-4 min-h-screen flex flex-col">
+                <!-- Logo section -->
+                <div class="flex justify-center pt-32 mb-16">
+                    <div class="logo logo-white w-96 h-48" role="img" aria-label="Meleon Logo"></div>
+                </div>            
     
-            <!-- Main content section - Now using flex-grow to fill remaining space -->
-            <div class="flex-grow flex items-center">
-                <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-                    <!-- Left: Text Content -->
-                    <div class="text-left space-y-8">
-                        <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
-                            Programmez votre contrôle <br>
-                            <span class="text-meleon-yellow">sur mesure</span>
-                        </h1>
-                        
-                        <p class="text-2xl md:text-3xl text-gray-200 max-w-xl">
-                            Un contrôleur d'énergie entièrement programmable 
-                        </p>
+                <!-- Main content section -->
+                <div class="flex-grow flex items-center">
+                    <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                        <!-- Left: Text Content -->
+                        <div class="text-left space-y-8">
+                            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+                                Programmez votre contrôle <br>
+                                <span class="text-meleon-secondary">sur mesure</span>
+                            </h1>
+                            
+                            <p class="text-2xl md:text-3xl text-gray-200 max-w-xl">
+                                Un contrôleur d'énergie entièrement programmable 
+                            </p>
     
-                        <div class="flex space-x-6">
-                            <a href="#demo" 
-                               class="bg-meleon-yellow text-meleon-green px-8 py-4 rounded-lg 
-                                      text-xl font-semibold inline-flex items-center group 
-                                      transition-all duration-300 hover:bg-white">
-                                Voir la démo
-                                <svg xmlns="http://www.w3.org/2000/svg" 
-                                     class="h-6 w-6 ml-2 transform group-hover:translate-x-1 transition-transform" 
-                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                            <a href="#contact" 
-                               class="border-2 border-black text-black px-8 py-4 rounded-lg 
-                                      text-xl font-semibold inline-flex items-center
-                                      transition-all duration-300 hover:bg-white hover:text-meleon-green">
-                                Nous contacter
-                            </a>
+                            <div class="flex space-x-6">
+                                <a href="#demo" 
+                                   class="bg-meleon-secondary text-meleon-primary px-8 py-4 rounded-lg 
+                                          text-xl font-semibold inline-flex items-center group 
+                                          transition-all duration-300 hover:bg-white">
+                                    Voir la démo
+                                    <svg xmlns="http://www.w3.org/2000/svg" 
+                                         class="h-6 w-6 ml-2 transform group-hover:translate-x-1 transition-transform" 
+                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                                <a href="#contact" 
+                                   class="border-2 border-black text-black px-8 py-4 rounded-lg 
+                                          text-xl font-semibold inline-flex items-center
+                                          transition-all duration-300 hover:bg-white hover:text-meleon-primary">
+                                    Nous contacter
+                                </a>
+                            </div>
                         </div>
-                    </div>
     
-                    <!-- Right: Dashboard Preview -->
-                    <div class="relative">
-                        <div class="relative transform hover:scale-[1.02] transition-all duration-500">
-                            <div class="absolute -inset-0.5 bg-meleon-secondary rounded-xl blur"></div>
-                            <img src="images/Dashboard.png" 
-                                 alt="Interface Meleon" 
-                                 class="relative rounded-xl shadow-2xl w-[1500px] h-auto">
+                        <!-- Right: Dashboard Preview -->
+                        <div class="relative">
+                            <div class="relative transform hover:scale-[1.02] transition-all duration-500">
+                                <div class="absolute -inset-0.5 bg-meleon-secondary rounded-xl blur"></div>
+                                <img src="images/Dashboard.png" 
+                                     alt="Interface Meleon" 
+                                     class="relative rounded-xl shadow-2xl w-full h-auto">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Qu'est-ce que Meleon Section -->
-    <section id="quest-ce-que" class="relative section-spacing section-transition-bottom">
-       <div class="container mx-auto px-4">
-           <!-- Section Header -->
-           <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
-               Qu'est-ce que Meleon ?
-           </h2>
-           
-           <!-- Feature Cards Grid -->
-           <div class="grid md:grid-cols-3 gap-8 mb-16">
-               <!-- Control Card -->
-               <div class="feature-card" data-aos="fade-up">
-                   <div class="flex items-center mb-6">
-                       <div class="icon-container icon-yellow">
-                           <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
-                           </svg>
-                       </div>
-                       <h3 class="text-xl font-semibold text-meleon-primary">Contrôle Universel</h3>
-                   </div>
-                   <p class="text-gray-600">
-                       Le premier contrôleur d'énergie entièrement programmable par l'utilisateur. 
-                       Gardez le contrôle sur vos systèmes sans dépendre d'experts externes.
-                   </p>
-               </div>
+        </section>
     
-               <!-- Independence Card -->
-               <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                   <div class="flex items-center mb-6">
-                       <div class="icon-container icon-green">
-                           <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                           </svg>
+        <!-- Qu'est-ce que Meleon Section -->
+        <section id="quest-ce-que" class="relative py-24">
+           <div class="container mx-auto px-4">
+               <!-- Section Header -->
+               <h2 class="text-4xl font-bold text-center text-white mb-16" data-aos="fade-up">
+                   Qu'est-ce que Meleon ?
+               </h2>
+               
+               <!-- Feature Cards Grid -->
+               <div class="grid md:grid-cols-3 gap-8 mb-16">
+                   <!-- Control Card -->
+                   <div class="feature-card p-6 rounded-xl" data-aos="fade-up">
+                       <div class="flex items-center mb-6">
+                           <div class="icon-container bg-meleon-yellow">
+                               <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                               </svg>
+                           </div>
+                           <h3 class="text-xl font-semibold text-meleon-primary ml-4">Notre solution</h3>
                        </div>
-                       <h3 class="text-xl font-semibold text-meleon-primary">Indépendance Totale</h3>
-                   </div>
-                   <p class="text-gray-600">
-                       Une solution 100% flexible et autonome, évolutive et indépendante des fabricants.
-                       Créez vous-même vos règles de contrôle.
-                   </p>
-               </div>
-    
-               <!-- Monitoring Card -->
-               <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                   <div class="flex items-center mb-6">
-                       <div class="icon-container icon-sage">
-                           <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                           </svg>
-                       </div>
-                       <h3 class="text-xl font-semibold text-meleon-primary">Monitoring Avancé</h3>
-                   </div>
-                   <p class="text-gray-600">
-                       Interface de supervision web sécurisée avec tableaux de bord en temps réel personnalisables
-                       et système de gestion de maintenance intégré.
-                   </p>
-               </div>
-           </div>
-    
-           <!-- Bottom Highlight -->
-           <div class="highlight-gradient p-8" data-aos="fade-up">
-               <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                   <div class="flex-1">
-                       <h3 class="text-2xl font-bold mb-4">Innovation & Performance</h3>
-                       <p class="text-white/90">
-                           Une solution unique intégrant le contrôle, le monitoring, l'analyse de performance 
-                           et la maintenance dans une seule interface intuitive.
+                       <p class="text-gray-600">
+                           Un Energy Management System (EMS) complet et universel permettant une exploitation et une maintenance simple et paramétrable de
+                            systèmes de production d'énergie.
                        </p>
                    </div>
-                   <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center">
-                       <div class="pulse-dot bg-white"></div>
+    
+                   <!-- Monitoring Card -->
+                   <div class="feature-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                       <div class="flex items-center mb-6">
+                           <div class="icon-container bg-meleon-sage">
+                               <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                               </svg>
+                           </div>
+                           <h3 class="text-xl font-semibold text-meleon-primary ml-4">Monitoring et contrôle Avancé</h3>
+                       </div>
+                       <p class="text-gray-600">
+                           Un contrôleur d'énergie entièrement personalisable. Créez vous-même vos règles de contrôle.
+                           Interface de supervision web sécurisée avec tableaux de bord en temps réel personnalisables.
+                       </p>
+                   </div>
+    
+                   <!-- Independence Card -->
+                   <div class="feature-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                       <div class="flex items-center mb-6">
+                           <div class="icon-container bg-meleon-green-medium">
+                               <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                               </svg>
+                           </div>
+                           <h3 class="text-xl font-semibold text-meleon-primary ml-4">Né du terrain</h3>
+                       </div>
+                       <p class="text-gray-600">
+                           Une solution 100% flexible et autonome, 
+                           répondant aux besoins des acteurs du milieu (intégrateurs, installateurs et opérateurs).
+                       </p>
+                   </div>
+               </div>
+    
+               <!-- Final text section with animation -->
+               <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                   <div class="feature-card p-8 text-center">
+                       <h3 class="text-2xl font-bold text-meleon-primary mb-4">Innovation & Performance</h3>
+                       <p class="text-gray-800">
+                           Un EMS évolutif, agnostique et enitèrement personnalisable intégrant le contrôle, 
+                           le monitoring, et l'analyse de performance dans une seule interface intuitive.
+                       </p>
                    </div>
                </div>
            </div>
-       </div>
-    </section>    
-    
-    <!-- Product Section - Showcases main features and benefits -->
-    <section id="notre-produit" class="relative section-spacing section-transition-bottom">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
-                Notre Produit
-            </h2>
-            
-            <!-- Dashboard Overview - Main product visualization -->
-            <div class="mb-20" data-aos="fade-up">
-                <h3 class="text-3xl font-bold text-meleon-primary text-center mb-8">Dashboard</h3>
-                <div class="max-w-5xl mx-auto transform transition-all duration-300 hover:scale-105">
-                    <img src="images/Dashboard.png" alt="Dashboard Interface" class="w-full rounded-lg shadow-xl mb-8">
-                    <p class="text-xl text-gray-700 text-center italic">
-                        Un système unique pour tous vos besoins en contrôle, monitoring, analyse de la performance, 
-                        stockage de données et GMAO
-                    </p>
-                </div>
-            </div>
-
-            <!-- Control Configuration Section - Technical features -->
-            <div class="mb-16">
-                <h3 class="text-3xl font-bold text-meleon-primary text-center mb-8" data-aos="fade-up">
-                    Paramétrage du contrôle
-                </h3>
-                <!-- Two-column layout for protocol and regulation images -->
-                <div class="grid md:grid-cols-2 gap-12" data-aos="fade-up">
-                    <div class="transform transition-all duration-300 hover:scale-105">
-                        <img src="images/Protocol.png" alt="Protocol Interface" class="w-full rounded-lg shadow-xl">
-                    </div>
-                    <div class="transform transition-all duration-300 hover:scale-105">
-                        <img src="images/Regulation.png" alt="Regulation Interface" class="w-full rounded-lg shadow-xl">
-                    </div>
-                </div>
-                
-                <!-- Feature Cards - Three-column grid on desktop -->
-                <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Integration Card -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
-                                hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-lg text-gray-700">
-                            A l'intersection entre le PMS (Power Management System), l'EMS (Energy Management System) 
-                            et les systèmes SCADA traditionnels.
-                        </p>
-                    </div>
-                    <!-- Transparency Card -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
-                                hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                        <p class="text-lg text-gray-700">
-                            Une solution transparente, pour une identification des problèmes et gestion de la 
-                            maintenance simplifiée
-                        </p>
-                    </div>
-                    <!-- Flexibility Card -->
-                    <div class="bg-white p-6 rounded-lg shadow-md transform transition-all duration-300 
-                                hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                        <p class="text-lg text-gray-700">
-                            Une solution 100% flexible, évolutive et indépendante: créez vous-même vos règles de contrôle, 
-                            ajoutez vos protocoles de communication, sans expertise requise en programmation ou en automatisme.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
         
     <!-- Product Section - Technical specs -->
     <section id="specs" class="relative section-spacing section-transition-bottom">
