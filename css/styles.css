@@ -181,7 +181,7 @@
 }
 
 .feature-card-transparent:hover {
-  transform: translateY(-8px);  /* Increased lift (originally -2px) */
+  transform: translateY(-12px);  /* Increased lift (originally -2px) */
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   background: rgba(255, 255, 255, 0.15);  /* Slightly more opaque on hover */
 }
@@ -198,7 +198,7 @@
 }
 
 .feature-card-solid:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 /*Spacing between sections*/
@@ -220,7 +220,7 @@
 }
 /* background-size: 20px 20px --> changer ca a une plus petite valeur si besoin,  */
 .grid-pattern-small {
-    background-size: 4px 4px; /* Taille des carrés - ajustez selon vos besoins */
+    background-size: 10px 10px; /* Taille des carrés - ajustez selon vos besoins */
     background-image: 
         linear-gradient(to right, rgba(13, 57, 57, 0.2) 1px, transparent 1px), /* 0.1 pour plus foncé */
         linear-gradient(to bottom, rgba(13, 57, 57, 0.2) 1px, transparent 1px);
