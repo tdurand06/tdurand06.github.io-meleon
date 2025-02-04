@@ -160,7 +160,7 @@
         </div>
     </nav>
 
-    <section class="relative min-h-screen">
+    <section id="hero" class="relative min-h-screen">
         <!-- Background container with gradient -->
         <div class="absolute top-20 inset-x-0 bottom-0 gradient-bg overflow-hidden"
              x-data="{ mouseX: 0, mouseY: 0 }" 
@@ -186,8 +186,7 @@
                         </h1>
                         
                         <p class="text-2xl md:text-3xl text-gray-200 max-w-xl">
-                            Un contrôleur d'énergie entièrement programmable par l'utilisateur. 
-                            Gardez le contrôle sur vos systèmes sans dépendre d'experts externes.
+                            Un contrôleur d'énergie entièrement programmable. 
                         </p>
     
                         <div class="flex space-x-6">
@@ -203,7 +202,7 @@
                                 </svg>
                             </a>
                             <a href="#contact" 
-                               class="border-2 border-white text-white px-8 py-4 rounded-lg 
+                               class="border-2 border-black text-black px-8 py-4 rounded-lg 
                                       text-xl font-semibold inline-flex items-center
                                       transition-all duration-300 hover:bg-white hover:text-meleon-green">
                                 Nous contacter
@@ -217,7 +216,7 @@
                             <div class="absolute -inset-0.5 bg-meleon-secondary rounded-xl blur"></div>
                             <img src="images/Dashboard.png" 
                                  alt="Interface Meleon" 
-                                 class="relative rounded-xl shadow-2xl">
+                                 class="relative rounded-xl shadow-2xl w-[600px] h-auto">
                         </div>
                     </div>
                 </div>
@@ -226,13 +225,13 @@
     </section>
 
     <!-- Qu'est-ce que Meleon Section -->
-    <section id="quest-ce-que" class="relative py-24">
+    <section id="quest-ce-que" class="relative section-spacing section-transition-bottom">
        <div class="container mx-auto px-4">
            <!-- Section Header -->
            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
                Qu'est-ce que Meleon ?
            </h2>
-    
+           
            <!-- Feature Cards Grid -->
            <div class="grid md:grid-cols-3 gap-8 mb-16">
                <!-- Control Card -->
@@ -303,7 +302,7 @@
     </section>    
     
     <!-- Product Section - Showcases main features and benefits -->
-    <section id="notre-produit" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="notre-produit" class="relative section-spacing section-transition-bottom">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
                 Notre Produit
@@ -368,7 +367,7 @@
     </section>
         
     <!-- Product Section - Technical specs -->
-    <section id="specs" class="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="specs" class="relative section-spacing section-transition-bottom">
         <!-- Decorative background elements -->
         <div class="absolute inset-0 pointer-events-none">
             <div class="absolute top-0 left-1/4 w-96 h-96 bg-meleon-green/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -380,9 +379,9 @@
             <!-- Section Header -->
             <div class="max-w-3xl mx-auto text-center mb-20">
                 <h2 class="text-4xl font-bold tracking-tight text-meleon-primary mb-6">
-                    Une Technologie de Pointe
+                    Hardware - notre contrôleur d'énergie
                 </h2>
-                <p class="text-lg text-gray-600">Un système intelligent conçu pour optimiser vos ressources énergétiques</p>
+                <p class="text-lg text-gray-600">Un système intelligent conçu pour s'adapter à vos systèmes et optimiser vos ressources énergétiques</p>
             </div>
     
             <!-- Main Features Grid -->
@@ -449,7 +448,7 @@
                                         </li>
                                         <li class="flex items-center text-sm text-gray-600">
                                             <span class="w-2 h-2 bg-meleon-green rounded-full mr-2"></span>
-                                            Import/export minimum
+                                            Maximisation pénetration PV
                                         </li>
                                         <li class="flex items-center text-sm text-gray-600">
                                             <span class="w-2 h-2 bg-meleon-green rounded-full mr-2"></span>
@@ -470,7 +469,7 @@
                                         </li>
                                         <li class="flex items-center text-sm text-gray-600">
                                             <span class="w-2 h-2 bg-meleon-sage rounded-full mr-2"></span>
-                                            Load-shifting 3 tarifs
+                                            Load-shifting
                                         </li>
                                     </ul>
                                 </div>
@@ -560,7 +559,7 @@
         </div>
     </section>
  <!-- Valeurs Ajoutées Section -->
-    <section id="valeurs-ajoutees" class="relative py-24 bg-gray-50">
+    <section id="valeurs-ajoutees" class="relative section-spacing section-transition-bottom">
        <div class="container mx-auto px-4">
            <!-- Section Header -->
            <div class="max-w-3xl mx-auto text-center mb-16">
@@ -665,7 +664,7 @@
     </section>
                 
     <!-- Solutions Comparison Section - Contrasts traditional vs Meleon approach -->
-    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="solutions" class="relative section-spacing section-transition-bottom">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
                 Meleon, ayez plus de contrôle sur votre contrôle
@@ -727,93 +726,10 @@
         </div>
     </section>
 
-    <!-- Team Section - Showcases expertise and experience -->
-    <section id="experts" class="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center text-meleon-primary mb-16" data-aos="fade-up">
-                Nos Experts
-            </h2>
-            
-            <!-- Expert Cards Container - Vertical stack on mobile, alternating layout on desktop -->
-            <div class="flex flex-col space-y-12 max-w-6xl mx-auto">
-                
-                <!-- Expert 1 - Control Systems Specialist -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                        <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <img src="images/Quentin.png" alt="Quentin" class="w-full rounded-lg shadow-md">
-                        </div>
-                        <div class="flex-1 text-center md:text-left">
-                            <h3 class="text-2xl font-bold text-meleon-primary mb-3">Quentin CRAMBES</h3>
-                            <p class="font-semibold text-gray-700 mb-3">
-                                Expert métier – contrôle des systèmes hybrides de production d'énergie
-                            </p>
-                            <p class="text-gray-600">
-                                12 ans d'expérience dans les énergies renouvelables et l'automatisme
-                            </p>
-                        </div>
-                    </div>
-                </div>
     
-                <!-- Expert 2 - Development Lead -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-6">
-                        <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <img src="images/Hadrien.png" alt="Hadrien" class="w-full rounded-lg shadow-md">
-                        </div>
-                        <div class="flex-1 text-center md:text-right">
-                            <h3 class="text-2xl font-bold text-meleon-primary mb-3">Hadrien LIGNIERES</h3>
-                            <p class="font-semibold text-gray-700 mb-3">
-                                Expert développement full-stack et data
-                            </p>
-                            <p class="text-gray-600">
-                                8 ans d'expérience en développement de systèmes de base de données
-                            </p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Expert 3 - Systems Architect -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                        <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <img src="images/Loic.png" alt="Loic" class="w-full rounded-lg shadow-md">
-                        </div>
-                        <div class="flex-1 text-center md:text-left">
-                            <h3 class="text-2xl font-bold text-meleon-primary mb-3">Loic GUIHENEUF</h3>
-                            <p class="font-semibold text-gray-700 mb-3">
-                                Expert métier – systèmes hybrides de production d'énergie
-                            </p>
-                            <p class="text-gray-600">
-                                6 ans d'expérience dans la conception, l'installation et le SAV d'installations PV hybrides
-                            </p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Expert 4 - Electronics & IT -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-6">
-                        <div class="w-1/2 md:w-1/4 flex-shrink-0">
-                            <div class="logo logo-black w-full h-64 rounded-lg shadow-md" role="img" aria-label="Pierre"></div>
-                        </div>
-                        <div class="flex-1 text-center md:text-right">
-                            <h3 class="text-2xl font-bold text-meleon-primary mb-3">PIERRE SCHAMBERGER</h3>
-                            <p class="font-semibold text-gray-700 mb-3">
-                                Expert électronique embarquée & IT
-                            </p>
-                            <p class="text-gray-600">
-                                14 ans d'expérience en électronique et systèmes de monitoring environnementaux
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
 <!-- Product Features Section -->
-    <section id="fonctionnalites" class="relative py-24 bg-white overflow-hidden">
+    <section id="fonctionnalites" class="relative section-spacing section-transition-bottom-grid">
         <!-- Decorative elements -->
         <div class="absolute inset-0 w-screen pointer-events-none grid-pattern-large">
         </div>
@@ -929,7 +845,7 @@
 
     
     <!-- Technical Specifications Section -->
-    <section id="specifications" class="relative min-h-screen py-24 bg-white overflow-hidden">
+    <section id="specifications" class="relative min-h-screen section-spacing section-transition-bottom-grid">
         <div class="absolute inset-0 w-screen pointer-events-none grid-pattern-small">
         </div>
     
@@ -1045,6 +961,119 @@
             </div>
         </div>
     </section>
+
+    <!-- Team Section - Showcases expertise and experience -->
+    <section id="experts" class="relative section-spacing section-transition-bottom">
+        <!-- Fond subtil -->
+        <div class="absolute inset-0 bg-gradient-to-br from-meleon-green/5 to-meleon-yellow/5"></div>
+        
+        <!-- Contenu principal -->
+        <div class="relative container mx-auto px-4">
+            <!-- Introduction Section -->
+            <div class="max-w-4xl mx-auto mb-24">
+                <h2 class="title-primary text-center mb-12" data-aos="fade-up">Qui sommes-nous ?</h2>
+                <div class="prose prose-lg max-w-none space-y-6 text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Notre équipe fondatrice cumule plus de 30 ans d'expérience dans la conception et l'intégration de systèmes énergétiques hybrides à travers le monde. De l'étude de faisabilité à la mise en service d'installations MW, nous avons constaté un besoin crucial : rendre la programmation des systèmes de contrôle accessible à tous.
+                    </p>
+                    <p>
+                        Aujourd'hui, les solutions existantes imposent un choix frustrant : soit un automate industriel sur-mesure nécessitant une expertise pointue et un investissement conséquent, soit un contrôleur standard aux capacités limitées. C'est pour briser ce dilemme que nous avons créé Meleon.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Team Cards Section -->
+            <div class="max-w-6xl mx-auto mb-24">
+                <h3 class="title-secondary text-center mb-16" data-aos="fade-up">Notre Équipe</h3>
+                
+                <!-- Expert Cards Container -->
+                <div class="grid gap-8 md:gap-12">
+                    <!-- Expert 1 -->
+                    <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="w-48 md:w-56 flex-shrink-0">
+                                <img src="images/Quentin.png" alt="Quentin" class="w-full h-full object-cover rounded-lg">
+                            </div>
+                            <div class="flex-1 text-center md:text-left">
+                                <h4 class="text-xl font-bold text-meleon-primary mb-2">Quentin CRAMBES</h4>
+                                <p class="text-lg font-medium text-gray-700 mb-3">
+                                    Expert métier – contrôle des systèmes hybrides de production d'énergie
+                                </p>
+                                <p class="text-gray-600">
+                                    12 ans d'expérience dans les énergies renouvelables et l'automatisme
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Expert 2 -->
+                    <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                            <div class="w-48 md:w-56 flex-shrink-0">
+                                <img src="images/Hadrien.png" alt="Hadrien" class="w-full h-full object-cover rounded-lg">
+                            </div>
+                            <div class="flex-1 text-center md:text-right">
+                                <h4 class="text-xl font-bold text-meleon-primary mb-2">Hadrien LIGNIERES</h4>
+                                <p class="text-lg font-medium text-gray-700 mb-3">
+                                    Expert développement full-stack et data
+                                </p>
+                                <p class="text-gray-600">
+                                    8 ans d'expérience en développement de systèmes de base de données
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Expert 3 -->
+                    <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="w-48 md:w-56 flex-shrink-0">
+                                <img src="images/Loic.png" alt="Loic" class="w-full h-full object-cover rounded-lg">
+                            </div>
+                            <div class="flex-1 text-center md:text-left">
+                                <h4 class="text-xl font-bold text-meleon-primary mb-2">Loic GUIHENEUF</h4>
+                                <p class="text-lg font-medium text-gray-700 mb-3">
+                                    Expert métier – systèmes hybrides de production d'énergie
+                                </p>
+                                <p class="text-gray-600">
+                                    6 ans d'expérience dans la conception, l'installation et le SAV d'installations PV hybrides
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Expert 4 -->
+                    <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                            <div class="w-48 md:w-56 flex-shrink-0">
+                                <div class="logo logo-black w-full h-64 rounded-lg" role="img" aria-label="Pierre"></div>
+                            </div>
+                            <div class="flex-1 text-center md:text-right">
+                                <h4 class="text-xl font-bold text-meleon-primary mb-2">PIERRE SCHAMBERGER</h4>
+                                <p class="text-lg font-medium text-gray-700 mb-3">
+                                    Expert électronique embarquée & IT
+                                </p>
+                                <p class="text-gray-600">
+                                    14 ans d'expérience en électronique et systèmes de monitoring environnementaux
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Vision Section -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="title-secondary text-center mb-12" data-aos="fade-up">Notre Vision</h3>
+                <div class="prose prose-lg max-w-none text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Notre ambition ne s'arrête pas là. Nous construisons Meleon avec une vision claire : créer une communauté d'experts et d'utilisateurs qui partagent leurs expériences et enrichissent collectivement la solution. À terme, nous visons une approche collaborative et ouverte, où chaque retour terrain contribue à l'amélioration continue de la plateforme.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     
 <!-- Footer Section -->
     <footer class="bg-white py-8 border-t border-gray-200">
