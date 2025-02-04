@@ -166,40 +166,50 @@
         <div class="absolute inset-0 gradient-bg opacity-100 pointer-events-none"></div>
     
         <!-- Hero Section -->
+        <!-- Hero Section: test-->
         <section id="hero" class="relative min-h-screen">
-            <!-- Content container -->
+            <!-- Content container with relative positioning for z-index stacking -->
             <div class="relative container mx-auto px-4 min-h-screen flex flex-col">
-                <!-- Logo section -->
+                <!-- Logo container: Positioned at top with specific spacing -->
                 <div class="flex justify-center pt-32 mb-16">
+                    <!-- Logo element with specific dimensions -->
                     <div class="logo logo-white w-96 h-48" role="img" aria-label="Meleon Logo"></div>
                 </div>            
-    
-                <!-- Main content section -->
+        
+                <!-- Main content area: Uses flex-grow to fill available space -->
                 <div class="flex-grow flex items-center">
-                    <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-                        <!-- Left: Text Content -->
-                        <div class="text-left space-y-8">
+                    <!-- Two-column grid layout with increased max-width for larger screens -->
+                    <div class="grid lg:grid-cols-2 gap-12 items-center max-w-8xl mx-auto">
+                        <!-- Left Column: Text Content -->
+                        <!-- Added right padding on large screens to prevent text overlap with larger dashboard -->
+                        <div class="text-left space-y-8 lg:pr-8">
+                            <!-- Main heading with responsive text sizing -->
                             <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
                                 Programmez votre contrôle <br>
                                 <span class="text-meleon-secondary">sur mesure</span>
                             </h1>
                             
+                            <!-- Subheading with constrained width -->
                             <p class="text-2xl md:text-3xl text-gray-200 max-w-xl">
                                 Un contrôleur d'énergie entièrement programmable 
                             </p>
-    
+        
+                            <!-- Call-to-action buttons container -->
                             <div class="flex space-x-6">
+                                <!-- Demo button with hover animation -->
                                 <a href="#demo" 
                                    class="bg-meleon-secondary text-meleon-primary px-8 py-4 rounded-lg 
                                           text-xl font-semibold inline-flex items-center group 
                                           transition-all duration-300 hover:bg-white">
                                     Voir la démo
+                                    <!-- Animated arrow icon -->
                                     <svg xmlns="http://www.w3.org/2000/svg" 
                                          class="h-6 w-6 ml-2 transform group-hover:translate-x-1 transition-transform" 
                                          fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                     </svg>
                                 </a>
+                                <!-- Contact button with hover effect -->
                                 <a href="#contact" 
                                    class="border-2 border-black text-black px-8 py-4 rounded-lg 
                                           text-xl font-semibold inline-flex items-center
@@ -208,14 +218,19 @@
                                 </a>
                             </div>
                         </div>
-    
-                        <!-- Right: Dashboard Preview -->
-                        <div class="relative">
+        
+                        <!-- Right Column: Dashboard Preview -->
+                        <!-- Added negative margin on large screens to allow dashboard to extend beyond grid -->
+                        <div class="relative lg:-mr-20">
+                            <!-- Container for hover animation and glow effect -->
                             <div class="relative transform hover:scale-[1.02] transition-all duration-500">
+                                <!-- Glow effect: Blurred background element -->
                                 <div class="absolute -inset-0.5 bg-meleon-secondary rounded-xl blur"></div>
+                                <!-- Dashboard image -->
+                                <!-- Added max-w-[150%] to allow image to scale beyond its container -->
                                 <img src="images/Dashboard.png" 
                                      alt="Interface Meleon" 
-                                     class="relative rounded-xl shadow-2xl w-full h-auto">
+                                     class="relative rounded-xl shadow-2xl w-full h-auto max-w-[150%]">
                             </div>
                         </div>
                     </div>
