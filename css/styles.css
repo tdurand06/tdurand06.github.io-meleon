@@ -75,11 +75,15 @@
 
 /* Gradient Variations */
 .gradient-bg {
-  background: linear-gradient(335deg,
+  background: linear-gradient(45deg,
     var(--meleon-green) 0%,
-    var(--meleon-green-blue) 35%,                              
-    var(--meleon-green-medium) 65%,                              
+    var(--meleon-green-blue) 35%,   
+    var(--meleon-lime) 30%,
+    var(--meleon-peach) 60%,
+    var(--meleon-sand) 75%,
+    var(--meleon-green-medium) 90%,                              
     var(--meleon-yellow) 100%
+                            
   );
 }
 
@@ -88,17 +92,22 @@
     var(--meleon-yellow) 0%,
     var(--meleon-green) 100%);
 }
-
-.gradient-bg-smooth-reverse {
-  background: linear-gradient(335deg, 
-    var(--meleon-green) 0%, 
-    var(--meleon-yellow) 100%
-  );
-}
-.gradient-bg-smooth {
-  background: linear-gradient(135deg, 
-    var(--meleon-green) 0%, 
-    var(--meleon-green-medium) 50%,
+.gradient-super-funky {
+  background: linear-gradient(335deg,
+    /* Start with cool colors */
+    var(--meleon-green) 0%,
+    var(--meleon-green-blue) 15%,
+    
+    /* Transition through vibrant greens */
+    var(--meleon-lime) 30%,
+    var(--meleon-forest) 45%,
+    
+    /* Warm middle section */
+    var(--meleon-peach) 60%,
+    var(--meleon-sand) 75%,
+    
+    /* Return to signature yellow */
+    var(--meleon-olive) 85%,
     var(--meleon-yellow) 100%
   );
 }
