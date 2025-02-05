@@ -74,18 +74,29 @@
 
 /* Gradient Variations */
 .gradient-bg {
-  background: linear-gradient(335deg, var(--meleon-green) 0%, var(--meleon-yellow) 100%);
+  background: linear-gradient(335deg,
+    var(--meleon-green) 0%,
+    var(--meleon-green) 10%,
+    var(--meleon-yellow) 90%,
+    var(--meleon-yellow) 100%
+  );
 }
 
 
 .gradient-bg-reverse {
-  background: linear-gradient(45deg, var(--meleon-yellow) 0%, var(--meleon-green) 100%);
+  background: linear-gradient(45deg,
+    var(--meleon-yellow) 0%,
+    var(--meleon-yellow) 10%,
+    var(--meleon-yellow) 90%,
+    var(--meleon-green) 100%);
 }
 
 .gradient-bg-smooth-reverse {
   background: linear-gradient(335deg, 
     var(--meleon-green) 0%, 
-    var(--meleon-green-medium) 50%,
+    var(--meleon-green) 10%, 
+                             
+    var(--meleon-green-medium) 90%,
     var(--meleon-yellow) 100%
   );
 }
