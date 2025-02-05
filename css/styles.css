@@ -75,15 +75,13 @@
 
 /* Gradient Variations */
 .gradient-bg {
-  background: linear-gradient(45deg,
+  background: linear-gradient(335deg,
     var(--meleon-green) 0%,
-    var(--meleon-green-blue) 35%,   
-    var(--meleon-lime) 30%,
-    var(--meleon-peach) 60%,
-    var(--meleon-sand) 75%,
-    var(--meleon-green-medium) 90%,                              
+    var(--meleon-green) 10%,
+    var(--meleon-yellow) 90%,
+    var(--meleon-green-blue) 35%,                              
+    var(--meleon-green-medium) 65%,                              
     var(--meleon-yellow) 100%
-                            
   );
 }
 
