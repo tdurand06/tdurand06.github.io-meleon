@@ -82,7 +82,13 @@
   background: linear-gradient(45deg, var(--meleon-yellow) 0%, var(--meleon-green) 100%);
 }
 
-
+.gradient-bg-smooth-reverse {
+  background: linear-gradient(335deg, 
+    var(--meleon-green) 0%, 
+    var(--meleon-green-medium) 50%,
+    var(--meleon-yellow) 100%
+  );
+}
 .gradient-bg-smooth {
   background: linear-gradient(135deg, 
     var(--meleon-green) 0%, 
@@ -90,6 +96,8 @@
     var(--meleon-yellow) 100%
   );
 }
+
+
 
 /* Text Color Utilities */
 .text-meleon-primary { color: var(--meleon-green); }
@@ -232,6 +240,7 @@
 
 /* Section Transitions
    Crée des transitions douces entre les sections avec différents arrière-plans */
+/*
 .section-transition-bottom {
     position: relative;
     z-index: 1; /* Assure que le contenu reste au-dessus du dégradé */
@@ -250,6 +259,7 @@
 .section-transition-bottom-grid::after {
     background: linear-gradient(to bottom, transparent, var(--meleon-green-hint));
 }
+*/
 
 /* Icon containers */
 .icon-container {
