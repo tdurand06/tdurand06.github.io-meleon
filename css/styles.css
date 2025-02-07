@@ -118,7 +118,7 @@
 /* Background Color Utilities */
 .bg-meleon-primary { background-color: var(--meleon-green); }
 .bg-meleon-secondary { background-color: var(--meleon-yellow); }
-.bg-meleon-medium { background-color: var(--meleon-green-sage); }
+.bg-meleon-medium { background-color: var(--meleon-green-medium); }
 
 /* Border Color Utilities */
 .border-meleon-primary { border-color: var(--meleon-green); }
