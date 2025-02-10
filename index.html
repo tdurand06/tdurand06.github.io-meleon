@@ -675,7 +675,9 @@
                 <div class="max-w-6xl mx-auto relative" x-data="{ 
                     currentSlide: 0,
                     isTransitioning: false,
-                    
+                    init() {
+                        this.slideWidth = this.$refs.slideTrack.firstElementChild.offsetWidth;
+                    },
                     next() {
                         if (this.isTransitioning) return;
                         this.isTransitioning = true;
@@ -742,7 +744,7 @@
                     <div class="overflow-hidden">
                         <div class="flex gap-8 transition-transform duration-1000 ease-in-out"
                              x-ref="slideTrack"
-                             :style="{ transform: `translateX(-${currentSlide * (100)}%)` }">
+                             :style="{ transform: `translateX(-${currentSlide * slideWidth}px)` }">
                             
                             <!-- Card 1: Remplacement -->
                             <div class="w-full flex-none">
