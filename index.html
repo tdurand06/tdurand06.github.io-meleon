@@ -661,122 +661,135 @@
             </div>
         </section>
         <section id="Solution2" class="relative section-spacing">
-            <div class="container mx-auto px-4">
-                <!-- Section Header -->
-                <div class="max-w-4xl mx-auto text-center mb-16">
-                    <h2 class="text-5xl font-bold text-white mb-6 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">
-                        Nos solutions
-                    </h2>
-                    
-                    <p class="text-3xl font-light text-white tracking-wide">
-                        Différentes solutions adaptées à votre centrale
-                    </p>
-                </div>
+           <div class="container mx-auto px-4">
+               <div class="max-w-4xl mx-auto text-center mb-16">
+                   <h2 class="text-5xl font-bold text-white mb-6 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">
+                       Nos solutions
+                   </h2>
+                   
+                   <p class="text-3xl font-light text-white tracking-wide">
+                       Différentes solutions adaptées à votre centrale
+                   </p>
+               </div>
         
-                <!-- Carousel Container -->
-                <div class="max-w-6xl mx-auto relative" x-data="{ 
-                    currentSlide: 0,
-                    isTransitioning: false,
-                    
-                    next() {
-                        if (this.isTransitioning) return;
-                        this.isTransitioning = true;
-                        
-                        this.currentSlide++;
-                        
-                        if (this.currentSlide === 3) {
-                            setTimeout(() => {
-                                this.$refs.slideTrack.style.transition = 'none';
-                                this.currentSlide = 0;
-                                this.$refs.slideTrack.style.transform = 'translateX(0)';
-                                setTimeout(() => {
-                                    this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
-                                    this.isTransitioning = false;
-                                }, 50);
-                            }, 1000);
-                        } else {
-                            setTimeout(() => this.isTransitioning = false, 1000);
-                        }
-                    },
-                    
-                    prev() {
-                        if (this.isTransitioning) return;
-                        this.isTransitioning = true;
-                        
-                        if (this.currentSlide === 0) {
-                            this.$refs.slideTrack.style.transition = 'none';
-                            this.currentSlide = 3;
-                            this.$refs.slideTrack.style.transform = `translateX(-${3 * 100}%)`;
-                            
-                            setTimeout(() => {
-                                this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
-                                this.currentSlide = 2;
-                                setTimeout(() => {
-                                    this.isTransitioning = false;
-                                }, 1000);
-                            }, 50);
-                        } else {
-                            this.currentSlide--;
-                            setTimeout(() => this.isTransitioning = false, 1000);
-                        }
-                    }
-                }">
-                    <!-- Navigation Arrows -->
-                    <button @click="prev" 
-                            class="absolute -left-8 top-1/2 transform -translate-y-1/2 z-10 
-                                   bg-white/80 hover:bg-white rounded-full p-3 shadow-lg
-                                   transition-colors duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
+               <div class="max-w-6xl mx-auto relative" x-data="{ 
+                   currentSlide: 0,
+                   isTransitioning: false,
+                   
+                   next() {
+                       if (this.isTransitioning) return;
+                       this.isTransitioning = true;
+                       
+                       this.currentSlide++;
+                       
+                       if (this.currentSlide === 3) {
+                           setTimeout(() => {
+                               this.$refs.slideTrack.style.transition = 'none';
+                               this.currentSlide = 0;
+                               this.$refs.slideTrack.style.transform = 'translateX(0)';
+                               setTimeout(() => {
+                                   this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
+                                   this.isTransitioning = false;
+                               }, 50);
+                           }, 1000);
+                       } else {
+                           setTimeout(() => this.isTransitioning = false, 1000);
+                       }
+                   },
+                   
+                   prev() {
+                       if (this.isTransitioning) return;
+                       this.isTransitioning = true;
+                       
+                       if (this.currentSlide === 0) {
+                           this.$refs.slideTrack.style.transition = 'none';
+                           this.currentSlide = 3;
+                           this.$refs.slideTrack.style.transform = `translateX(-${3 * 100}%)`;
+                           
+                           setTimeout(() => {
+                               this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
+                               this.currentSlide = 2;
+                               setTimeout(() => {
+                                   this.isTransitioning = false;
+                               }, 1000);
+                           }, 50);
+                       } else {
+                           this.currentSlide--;
+                           setTimeout(() => this.isTransitioning = false, 1000);
+                       }
+                   }
+               }">
+                   <div class="absolute -left-8 top-1/2 transform -translate-y-1/2 z-10">
+                       <button @click="prev" 
+                               class="bg-white/80 hover:bg-white rounded-full p-3 shadow-lg
+                                      transition-colors duration-300">
+                           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                           </svg>
+                       </button>
+                   </div>
         
-                    <button @click="next" 
-                            class="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10 
-                                   bg-white/80 hover:bg-white rounded-full p-3 shadow-lg
-                                   transition-colors duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
+                   <div class="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10">
+                       <button @click="next" 
+                               class="bg-white/80 hover:bg-white rounded-full p-3 shadow-lg
+                                      transition-colors duration-300">
+                           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                           </svg>
+                       </button>
+                   </div>
         
-                    <!-- Slides Container -->
-                    <div class="relative">
-                        <div class="flex transition-transform duration-1000 ease-in-out"
-                             x-ref="slideTrack"
-                             :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-                            
-                            <!-- Card 1: Remplacement -->
-                            <div class="w-full flex-shrink-0">
-                                <div class="feature-card">
-                                    <div class="relative bg-white rounded-2xl transition-all duration-500 
-                                              hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)]">
-                                        <!-- Floating Title -->
-                                        <div class="absolute -top-6 left-0 right-0 text-center z-10">
-                                            <h3 class="inline-block px-8 py-2 bg-white rounded-full text-xl 
-                                                      font-semibold text-meleon-primary shadow-lg">
-                                                Remplacement
-                                            </h3>
-                                        </div>
+                   <div class="overflow-hidden">
+                       <div class="flex gap-8 transition-transform duration-1000 ease-in-out"
+                            x-ref="slideTrack"
+                            :style="{ transform: `translateX(-${currentSlide * (100 + 32)}%)` }">
+                           
+                           <div class="w-full flex-none">
+                               <div class="feature-card">
+                                   <div class="relative bg-white rounded-2xl transition-all duration-500 
+                                             hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)]">
+                                       <div class="absolute -top-6 left-0 right-0 text-center z-10">
+                                           <h3 class="inline-block px-8 py-2 bg-white rounded-full text-xl 
+                                                     font-semibold text-meleon-primary shadow-lg">
+                                               Remplacement
+                                           </h3>
+                                       </div>
         
-                                        <!-- Content here (same as your original card content) -->
-                                        <!-- ... -->
-                                        <div class="absolute bottom-4 right-4 text-gray-700 text-sm">1/3</div>
-                                    </div>
-                                </div>
-                            </div>
+                                       <div class="pt-8 p-6 space-y-8">
+                                           <div class="relative max-w-lg mx-auto overflow-hidden rounded-xl">
+                                               <img src="images/Remplacement2.png" alt="Storage" class="w-full h-auto"/>
+                                           </div>
         
-                            <!-- Card 2 and 3 structure (same as Card 1) -->
-                            <!-- ... -->
+                                           <div class="space-y-4 text-center px-4">
+                                               <p class="text-lg leading-relaxed tracking-wide text-gray-700">
+                                                   Installation d'un contrôleur Meleon seul, pour une optimisation 
+                                                   du budget et une personnalisation du contrôle.
+                                               </p>
+                                               <div class="grid grid-cols-2 gap-4">
+                                                   <div class="bg-gray-50 p-3 rounded-lg text-center">
+                                                       <span class="text-sm text-gray-600">Personnalisation</span>
+                                                       <p class="font-semibold text-meleon-primary">Complète</p>
+                                                   </div>
+                                                   <div class="bg-gray-50 p-3 rounded-lg text-center">
+                                                       <span class="text-sm text-gray-600">Budget</span>
+                                                       <p class="font-semibold text-meleon-primary">Optimisé</p>
+                                                   </div>
+                                               </div>
+                                               <div class="absolute bottom-4 right-4 text-gray-700 text-sm">1/3</div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
         
-                            <!-- Clone of Card 1 -->
-                            <div class="w-full flex-shrink-0">
-                                <!-- Exact same content as Card 1 -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                           [Les cartes 2 et 3 suivent le même format]
+        
+                           [Clone de la première carte]
+        
+                       </div>
+                   </div>
+               </div>
+           </div>
         </section>
          <!-- Valeurs Ajoutées Section -->
         <section id="Solution" class="relative section-spacing">
