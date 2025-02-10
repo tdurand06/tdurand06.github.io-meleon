@@ -113,6 +113,7 @@
 /* Text Color Utilities */
 .text-meleon-primary { color: var(--meleon-green); }
 .text-meleon-secondary { color: var(--meleon-yellow); }
+.text-meleon-secondary-dark { color: #D6D44C; }
 .text-meleon-3 { color: var(--meleon-green-sage); }
 
 /* Background Color Utilities */
