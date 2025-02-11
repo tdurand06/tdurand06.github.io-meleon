@@ -933,7 +933,10 @@
                         dragging: false,
                         snapToSlide() {
                             const slideWidth = this.$refs.slideTrack.firstElementChild.offsetWidth;
-                            const nearestSlide = Math.round(Math.abs(this.currentX) / slideWidth);
+                            const swipeThreshold = 0.3;
+                            const progress = Math.abs(this.currentX) / slideWidth;
+                            const nearestSlide = progress + swipeThreshold >= Math.ceil(progress) ? 
+                                Math.ceil(progress) : Math.floor(progress);
                             this.activeSlide = Math.max(0, Math.min(nearestSlide, 2));
                             this.currentX = -this.activeSlide * slideWidth;
                         }
