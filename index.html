@@ -916,60 +916,52 @@
 
 
         <section id="Solution2Mobile" class="relative section-spacing md:hidden block">
-            <!-- Keep header but make it smaller -->
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center mb-8">  <!-- reduced margin -->
-                    <h2 class="text-3xl font-bold text-white mb-4 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]"> <!-- reduced size -->
-                        Nos solutions
-                    </h2>
-                    <p class="text-xl font-light text-white tracking-wide"> <!-- reduced size -->
-                        Différentes solutions adaptées à votre centrale
-                    </p>
+                <!-- Header remains similar but simplified -->
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-3">Nos solutions</h2>
+                    <p class="text-lg font-light text-white">Différentes solutions adaptées à votre centrale</p>
                 </div>
         
-                <div class="text-white text-center mb-4 italic text-sm"> <!-- smaller text -->
-                    ← Glissez pour découvrir nos solutions →
-                </div>
+                <p class="text-white text-center text-sm mb-4 italic">← Glissez pour découvrir nos solutions →</p>
         
-                <!-- Cards container -->
+                <!-- More flexible card container -->
                 <div class="overflow-x-auto touch-pan-x" x-data="{ activeSlide: 0 }">
                     <div class="flex gap-4 px-4">
-                        <!-- Adjusted card width and reduced padding -->
-                        <div class="w-[75vw] flex-none"> <!-- reduced from 85vw -->
-                            <div class="feature-card">
-                                <div class="relative bg-white rounded-2xl transition-all duration-500 
-                                          hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)]">
-                                    <div class="py-6 px-4"> <!-- reduced padding -->
-                                        <h3 class="text-2xl font-semibold text-meleon-primary text-center mb-4"> <!-- smaller text and margin -->
-                                            Remplacement
-                                        </h3>
+                        <!-- Card with more flexible sizing -->
+                        <div class="w-4/5 flex-none"> <!-- Using relative width instead of viewport units -->
+                            <div class="feature-card h-full">
+                                <div class="bg-white rounded-xl p-4 h-full flex flex-col">
+                                    <h3 class="text-lg font-semibold text-meleon-primary mb-3">
+                                        Remplacement
+                                    </h3>
         
-                                        <div class="space-y-4"> <!-- reduced spacing -->
-                                            <!-- Smaller image container -->
-                                            <div class="relative mx-auto overflow-hidden rounded-xl h-[200px] flex items-center justify-center"> <!-- reduced height -->
-                                                <img src="images/Remplacement2.png" alt="Storage" 
-                                                     class="w-full h-auto max-h-full object-contain"/>
+                                    <!-- Image container that adapts to content -->
+                                    <div class="aspect-video mb-3 flex items-center justify-center">
+                                        <img src="images/Remplacement2.png" alt="Storage" 
+                                             class="max-h-full w-auto object-contain"/>
+                                    </div>
+                                    
+                                    <!-- Text content that fills remaining space -->
+                                    <div class="flex-1 flex flex-col justify-between">
+                                        <p class="text-sm text-gray-700 mb-3">
+                                            Installation d'un contrôleur Meleon seul, pour une optimisation 
+                                            du budget et une personnalisation du contrôle.
+                                        </p>
+        
+                                        <div class="grid grid-cols-2 gap-2 text-sm">
+                                            <div class="bg-gray-50 p-2 rounded">
+                                                <span class="text-xs text-gray-600 block">Personnalisation</span>
+                                                <span class="font-semibold text-meleon-primary">Complète</span>
                                             </div>
-                                            
-                                            <div class="space-y-3 text-center px-2"> <!-- reduced spacing and padding -->
-                                                <p class="text-base leading-relaxed tracking-wide text-gray-700"> <!-- smaller text -->
-                                                    Installation d'un contrôleur Meleon seul, pour une optimisation 
-                                                    du budget et une personnalisation du contrôle.
-                                                </p>
-                                                <div class="grid grid-cols-2 gap-2"> <!-- reduced gap -->
-                                                    <div class="bg-gray-50 p-2 rounded-lg text-center"> <!-- reduced padding -->
-                                                        <span class="text-xs text-gray-600">Personnalisation</span>
-                                                        <p class="font-semibold text-meleon-primary text-sm">Complète</p>
-                                                    </div>
-                                                    <div class="bg-gray-50 p-2 rounded-lg text-center">
-                                                        <span class="text-xs text-gray-600">Budget</span>
-                                                        <p class="font-semibold text-meleon-primary text-sm">Optimisé</p>
-                                                    </div>
-                                                </div>
-                                                <div class="absolute bottom-2 right-2 text-gray-700 text-xs">1/3</div> <!-- adjusted position and size -->
+                                            <div class="bg-gray-50 p-2 rounded">
+                                                <span class="text-xs text-gray-600 block">Budget</span>
+                                                <span class="font-semibold text-meleon-primary">Optimisé</span>
                                             </div>
                                         </div>
                                     </div>
+        
+                                    <div class="text-xs text-gray-700 text-right mt-2">1/3</div>
                                 </div>
                             </div>
                         </div>
