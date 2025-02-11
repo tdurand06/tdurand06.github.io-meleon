@@ -106,7 +106,7 @@
                        class="block text-lg text-meleon-primary hover:text-meleon-medium transition-colors">
                         Hardware
                     </a>
-                    <a href="#Solution" @click="mobileMenuOpen = false"
+                    <a href="#Solution-mobile" @click="mobileMenuOpen = false"
                        class="block text-lg text-meleon-primary hover:text-meleon-medium transition-colors">
                         Solutions
                     </a>
@@ -148,7 +148,7 @@
                     <a href="#Hardware" class="text-meleon-primary hover:text-meleon-medium transition-colors">
                         Hardware
                     </a>                    
-                    <a href="#Solution" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                    <a href="#Solution-desktop" class="text-meleon-primary hover:text-meleon-medium transition-colors">
                         Solutions
                     </a>
                     <a href="#Infrastructure" class="text-meleon-primary hover:text-meleon-medium transition-colors">
@@ -173,14 +173,15 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- Main wrapper with continuous gradient background -->
     <div class="relative overflow-hidden">
         <!-- Common gradient background for both sections -->
         <div class="absolute inset-0 gradient-bg opacity-100 pointer-events-none"></div>
-    
+
+        
         <!-- Hero Section: test-->
-        <section id="hero" class="relative min-h-screen">
+        <section id="hero" class="relative min-h-screen section-spacing">
             <!-- Content container with relative positioning for z-index stacking -->
             <div class="relative container mx-auto px-4 min-h-screen flex flex-col">
                 <!-- Logo container: Positioned at top with specific spacing -->
@@ -249,11 +250,11 @@
                 </div>
             </div>
         </section>
-    
+
+        
         <!-- Qu'est-ce que Meleon Section -->
         <section id="intro" class="relative section-spacing"> 
            <div class="container mx-auto px-4">
- 
                <div class="max-w-4xl mx-auto text-center mb-16">
                    <!-- Section Header -->
                     <!-- Enhanced Title with Animation and Shadow -->
@@ -327,7 +328,6 @@
         
         <!-- Product Features Section -->
         <section id="EMS" class="relative section-spacing">
-
             <div class="container mx-auto px-4">
                <!-- Section Header -->
                 <div class="max-w-4xl mx-auto text-center mb-16">
@@ -480,7 +480,6 @@
         <!-- Product Section - Technical specs -->
         <section id="Hardware" class="relative min-h-screen section-spacing">
             <div class="container mx-auto px-4 relative">
-
                <!-- Section Header -->
                 <div class="max-w-4xl mx-auto text-center mb-16">
                     <!-- Enhanced Title with Animation and Shadow -->
@@ -673,7 +672,8 @@
                 </div>
             </div>
         </section>
-        <section id="Solution2" class="relative section-spacing hidden md:block">
+        
+        <section id="Solution-desktop" class="relative section-spacing hidden md:block">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center mb-16">
                     <h2 class="text-5xl font-bold text-white mb-6 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">
@@ -916,7 +916,7 @@
                 </div>
             </div>
         </section>
-        <section id="Solution2Mobile" class="relative section-spacing md:hidden block">
+        <section id="Solution-mobile" class="relative section-spacing md:hidden block">
             <div class="container mx-auto px-4">
                 <!-- Header -->
                 <div class="text-center mb-8">
@@ -1056,178 +1056,6 @@
             </div>
         </section>
         
-         <!-- Valeurs Ajoutées Section -->
-        <section id="Solution" class="relative section-spacing">
-           <div class="container mx-auto px-4">
-               <!-- Section Header -->
-                <div class="max-w-4xl mx-auto text-center mb-16">
-                    <!-- Enhanced Title with Animation and Shadow -->
-                    <h2 class="text-5xl font-bold text-white mb-6 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]" 
-                        data-aos="zoom-in" 
-                        data-aos-duration="800">
-                        Nos solutions
-                    </h2>
-                    
-                    <!-- Subtitle with Elegant Styling and Delayed Animation -->
-                    <p class="text-3xl font-light text-white tracking-wide" 
-                       data-aos="fade-up" 
-                       data-aos-delay="200"
-                       data-aos-duration="1000">
-                        Différentes solutions adaptées à votre centrale
-                    </p>
-                </div>
-        
-               <!-- Supervision -->
-               <div class="max-w-6xl mx-auto">
-                   <!-- Independence Feature -->
-                    <!-- Assistance/Remplacement Card -->
-                    <div class="feature-card mb-16" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="relative bg-white rounded-2xl transition-all duration-500 
-                                    hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)]
-                                    group h-full">
-                            <!-- Floating Title Section -->
-                            <div class="absolute -top-6 left-0 right-0 text-center">
-                                <h3 class="inline-block px-8 py-2 bg-white rounded-full text-xl 
-                                          font-semibold text-meleon-primary shadow-lg
-                                          transition-transform duration-500 group-hover:-translate-y-1">
-                                    Remplacement
-                                </h3>
-                            </div>
-                    
-                            <!-- Main Content Container -->
-                            <div class="pt-8 p-6 space-y-8">
-                                <!-- Image Container -->
-                                <div class="relative h-64 w-full overflow-hidden rounded-xl
-                                           transition-all duration-500 group-hover:-translate-y-2">
-                                    <img src="images/Remplacement2.png" alt="Storage" 
-                                         class="w-full h-full object-cover object-center"/>
-                                </div>
-                    
-                                <!-- Text Content -->
-                                <div class="space-y-4 opacity-90 transition-all duration-500 delay-100
-                                           group-hover:opacity-100 text-center px-4">
-                                    <p class="text-lg leading-relaxed tracking-wide text-gray-700
-                                              transform transition-all duration-500
-                                              group-hover:-translate-y-1">
-                                        Installation d'un contrôleur Meleon seul, pour une optimisation 
-                                        du budget et une personnalisation du contrôle.
-                                    </p>
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div class="bg-gray-50 p-3 rounded-lg text-center">
-                                            <span class="text-sm text-gray-600">Personnalisation</span>
-                                            <p class="font-semibold text-meleon-primary">Complète</p>
-                                        </div>
-                                        <div class="bg-gray-50 p-3 rounded-lg text-center">
-                                            <span class="text-sm text-gray-600">Budget</span>
-                                            <p class="font-semibold text-meleon-primary">Optimisé</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Support Card -->
-                    <div class="feature-card mb-16" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="relative bg-white rounded-2xl transition-all duration-500 
-                                    hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)]
-                                    group h-full">
-                            <!-- Floating Title Section -->
-                            <div class="absolute -top-6 left-0 right-0 text-center">
-                                <h3 class="inline-block px-8 py-2 bg-white rounded-full text-xl 
-                                          font-semibold text-meleon-primary shadow-lg
-                                          transition-transform duration-500 group-hover:-translate-y-1">
-                                    Support
-                                </h3>
-                            </div>
-                    
-                            <!-- Main Content Container -->
-                            <div class="pt-8 p-6 space-y-8">
-                                <!-- Image Container -->
-                                <div class="relative h-64 w-full overflow-hidden rounded-xl
-                                           transition-all duration-500 group-hover:-translate-y-2">
-                                    <img src="images/Support2.png" alt="Support" 
-                                         class="w-full h-full object-cover object-center"/>
-                                </div>
-                    
-                                <!-- Text Content -->
-                                <div class="space-y-4 opacity-90 transition-all duration-500 delay-100
-                                           group-hover:opacity-100 text-center px-4">
-                                    <p class="text-lg leading-relaxed tracking-wide text-gray-700
-                                              transform transition-all duration-500
-                                              group-hover:-translate-y-1">
-                                        Super au contrôleur primaire, pour améliorer ses attributs 
-                                        (sécurité, durée de stockage, paramétrage spécifique)
-                                    </p>
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div class="bg-gray-50 p-3 rounded-lg text-center">
-                                            <span class="text-sm text-gray-600">Stockage plateforme Meleon</span>
-                                            <p class="font-semibold text-meleon-primary">6+ mois</p>
-                                        </div>
-                                        <div class="bg-gray-50 p-3 rounded-lg text-center">
-                                            <span class="text-sm text-gray-600">Stockage local</span>
-                                            <p class="font-semibold text-meleon-primary">8-64 Go</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                       
-                   
-                    <div class="max-w-6xl mx-auto">
-                        <div class="feature-card mb-16" data-aos="fade-left" data-aos-duration="1000">
-                            <!-- Card Container with smooth hover effect -->
-                            <div class="relative bg-white rounded-2xl transition-all duration-500 
-                                        hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)]
-                                        group" h-full>
-                                <!-- Floating Title Section -->
-                                <div class="absolute -top-6 left-0 right-0 text-center">
-                                    <h3 class="inline-block px-8 py-2 bg-white rounded-full text-xl 
-                                              font-semibold text-meleon-primary shadow-lg
-                                              transition-transform duration-500 group-hover:-translate-y-1">
-                                        Supervision
-                                    </h3>
-                                </div>
-                    
-                                <!-- Main Content Container -->
-                                <div class="pt-8 p-6 space-y-8">
-                                    <!-- Image Container with constrained size -->
-                                    <div class="relative h-64 w-full overflow-hidden rounded-xl
-                                               transition-all duration-500 group-hover:-translate-y-2">
-                                        <img src="images/Supervision2.png" alt="Independence" 
-                                             class="w-full h-full object-cover object-center"/>
-                                    </div>
-                    
-                                    <!-- Text Content with delayed fade -->
-                                    <div class="space-y-4 opacity-90 transition-all duration-500 delay-100
-                                               group-hover:opacity-100 text-center px-4">
-                                        <p class="text-lg leading-relaxed tracking-wide text-gray-700
-                                                  transform transition-all duration-500
-                                                  group-hover:-translate-y-1">
-                                            Branchement avec les contrôleurs primaire pour assurer la communication 
-                                            entre systèmes habituellement incompatibles, comme la gestion des 
-                                            batteries avec le convertisseur.
-                                        </p>
-                                        <div class="grid grid-cols-2 gap-4">
-                                            <div class="bg-gray-50 p-3 rounded-lg text-center">
-                                                <span class="text-sm text-gray-600">Compatibilité</span>
-                                                <p class="font-semibold text-meleon-primary">Multi-fabricants</p>
-                                            </div>
-                                            <div class="bg-gray-50 p-3 rounded-lg text-center">
-                                                <span class="text-sm text-gray-600">Integration</span>
-                                                <p class="font-semibold text-meleon-primary">Automatique</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-           </div>
-        </section>
                     
         <!-- Solutions Comparison Section - Contrasts traditional vs Meleon approach -->
         <section id="Infrastructure" class="relative section-spacing ">
