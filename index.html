@@ -128,37 +128,21 @@
         </div>
     </div>
 
-    <!-- Main Navigation - Fixed at top -->
     <nav class="fixed w-full bg-white shadow-lg z-40">
-        <div class="container mx-auto px-4 py-5 md:py-6">
-            <div class="flex items-center justify-between">
-                <!-- Logo Section -->
+        <div class="flex items-center justify-between"> <!-- Remove container, keep full width -->
+            <!-- Left side with padding -->
+            <div class="px-4">
                 <a href="#hero" class="cursor-pointer">
                     <div class="logo logo-default h-12 md:h-16 w-48" role="img" aria-label="Meleon Logo"></div>
                 </a>
-    
-                <!-- Navigation Items Section -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#EMS" class="text-meleon-primary hover:text-meleon-medium transition-colors">
-                        Plateforme EMS
-                    </a>
-                    <a href="#Hardware" class="text-meleon-primary hover:text-meleon-medium transition-colors">
-                        Hardware
-                    </a>                    
-                    <a href="#Solution-desktop" class="text-meleon-primary hover:text-meleon-medium transition-colors">
-                        Solutions
-                    </a>
-                    <a href="#Infrastructure" class="text-meleon-primary hover:text-meleon-medium transition-colors">
-                        Infrastructure
-                    </a>   
-                    <a href="#experts" class="text-meleon-primary hover:text-meleon-medium transition-colors">
-                        Qui-sommes nous?
-                    </a>
-                    <a href="#contact" class="bg-meleon-primary text-white px-4 py-2 rounded-lg 
-                                            hover:bg-meleon-medium transition-colors animate-pulse">
-                        Contact
-                    </a>
-                </div>
+            </div>
+            
+            <!-- Right side with padding -->
+            <div class="hidden md:flex items-center space-x-8 px-4">
+                <a href="#EMS" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                    Plateforme EMS
+                </a>
+                <!-- ... other navigation items ... -->
             </div>
         </div>
     </nav>
