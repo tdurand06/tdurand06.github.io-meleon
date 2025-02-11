@@ -325,20 +325,18 @@
                </div>
            </div>
         </section>
-        
-        <!-- Product Features Section -->
+
+
         <section id="EMS" class="relative section-spacing">
             <div class="container mx-auto px-4">
-               <!-- Section Header -->
+                <!-- Section Header -->
                 <div class="max-w-4xl mx-auto text-center mb-16">
-                    <!-- Enhanced Title with Animation and Shadow -->
                     <h2 class="text-5xl font-bold text-white mb-6 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]" 
                         data-aos="zoom-in" 
                         data-aos-duration="800">
                         Plateforme EMS Meleon
                     </h2>
                     
-                    <!-- Subtitle with Elegant Styling and Delayed Animation -->
                     <p class="text-3xl font-light text-white tracking-wide" 
                        data-aos="fade-up" 
                        data-aos-delay="200"
@@ -347,14 +345,14 @@
                     </p>
                 </div>             
         
-                <!-- Features Flow -->
-                <div class="max-w-6xl mx-auto space-y-12">
-
+                <!-- Features Flow Container - Controls vertical spacing between feature rows -->
+                <div class="max-w-6xl mx-auto space-y-16">
                     
-                    <!-- Platform Overview -->
-                    <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-right">
-                        <div class="md:w-1/2 space-y-6">
-                            <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all">
+                    <!-- Platform Overview Feature Row -->
+                    <div class="flex flex-col md:flex-row items-stretch gap-8">
+                        <!-- Text Box Side - Fixed width and height matches image -->
+                        <div class="flex-shrink-0 md:w-1/5">
+                            <div class="h-full p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <div class="w-10 h-10 rounded-lg bg-meleon-green/10 flex items-center justify-center mr-4">
                                         <svg class="w-6 h-6 text-meleon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -363,9 +361,9 @@
                                     </div>
                                     <h3 class="text-xl font-semibold text-meleon-primary">Interface web sécurisé</h3>
                                 </div>
-                                <div class="space-y-4">
+                                <div class="flex-grow flex flex-col justify-center">
                                     <p class="text-gray-600">Tableaux de bord en temps réel entièrement personnalisables </p>
-                                    <div class="grid grid-cols-2 gap-4">
+                                    <div class="grid grid-cols-2 gap-4 mt-4">
                                         <div class="bg-gray-50 p-3 rounded-lg text-center">
                                             <span class="text-sm text-gray-600">Rafraîchissement</span>
                                             <p class="font-semibold text-meleon-primary">1s</p>
@@ -378,45 +376,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-meleon-green/20 rounded-2xl transform rotate-3"></div>
-                            <img src="images/Dashboard.png" alt="Dashboard" class="relative rounded-2xl shadow-lg"/>
-                        </div>
-                    </div>
-
-
-                    <div class="flex flex-col md:flex-row items-stretch gap-12" data-aos="fade-right">
-                        <!-- Text Box Side -->
-                        <div class="flex-shrink-0 md:w-1/5"> <!-- Changed to flex-shrink-0 and adjusted width -->
-                            <div class="h-full p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex flex-col">
-                                <!-- Box Header -->
-                                <div class="flex items-center mb-4">
-                                    <div class="w-10 h-10 rounded-lg bg-meleon-green/10 flex items-center justify-center mr-4">
-                                        <!-- Icon content -->
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-meleon-primary">Interface web sécurisé</h3>
-                                </div>
-                                <!-- Box Content -->
-                                <div class="flex-grow flex flex-col justify-center"> <!-- Added flex container for vertical centering -->
-                                    <p class="text-gray-600">Tableaux de bord en temps réel entièrement personnalisables</p>
-                                    <div class="grid grid-cols-2 gap-4 mt-4">
-                                        <!-- Grid content -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Image Side -->
-                        <div class="flex-grow relative"> <!-- Changed to flex-grow to take remaining space -->
+                        
+                        <!-- Image Side - Takes remaining space -->
+                        <div class="flex-grow relative">
                             <div class="absolute inset-0 bg-meleon-green/20 rounded-2xl transform rotate-3"></div>
                             <img src="images/Dashboard.png" alt="Dashboard" class="relative rounded-2xl shadow-lg w-full h-auto"/>
                         </div>
                     </div>
-                    
-                    <!-- Scalability Feature -->
-                    <div class="flex flex-col md:flex-row-reverse items-center gap-12" data-aos="fade-left">
-                        <div class="md:w-1/2 space-y-6">
-                            <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all">
+        
+                    <!-- Scalability Feature Row -->
+                    <div class="flex flex-col md:flex-row-reverse items-stretch gap-8">
+                        <div class="flex-shrink-0 md:w-1/5">
+                            <div class="h-full p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <div class="w-10 h-10 rounded-lg bg-meleon-yellow/10 flex items-center justify-center mr-4">
                                         <svg class="w-6 h-6 text-meleon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -425,9 +396,9 @@
                                     </div>
                                     <h3 class="text-xl font-semibold text-meleon-primary">Flexibilité & Évolutivité</h3>
                                 </div>
-                                <div class="space-y-4">
+                                <div class="flex-grow flex flex-col justify-center">
                                     <p class="text-gray-600">Ajout dynamique de nouveaux modèles d'appareils et protocoles de communication</p>
-                                    <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center p-4 mt-4 bg-gray-50 rounded-lg">
                                         <div class="flex-1">
                                             <div class="h-2 bg-gray-200 rounded-full">
                                                 <div class="h-2 bg-meleon-yellow rounded-full w-4/5"></div>
@@ -438,16 +409,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
+                        <div class="flex-grow relative">
                             <div class="absolute inset-0 bg-meleon-yellow/20 rounded-2xl transform -rotate-3"></div>
-                            <img src="images/Protocol.png" alt="Scalability" class="relative rounded-2xl shadow-lg"/>
+                            <img src="images/Protocol.png" alt="Scalability" class="relative rounded-2xl shadow-lg w-full h-auto"/>
                         </div>
                     </div>
-    
-                    <!-- Platform Overview -->
-                    <div class="flex flex-col md:flex-row items-center gap-12" data-aos="fade-right">
-                        <div class="md:w-1/2 space-y-6">
-                            <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all">
+        
+                    <!-- Dynamic Programming Feature Row -->
+                    <div class="flex flex-col md:flex-row items-stretch gap-8">
+                        <div class="flex-shrink-0 md:w-1/5">
+                            <div class="h-full p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <div class="w-10 h-10 rounded-lg bg-meleon-green/10 flex items-center justify-center mr-4">
                                         <svg class="w-6 h-6 text-meleon-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -456,9 +427,9 @@
                                     </div>
                                     <h3 class="text-xl font-semibold text-meleon-primary">Programmation dynamique</h3>
                                 </div>
-                                <div class="space-y-4">
+                                <div class="flex-grow flex flex-col justify-center">
                                     <p class="text-gray-600">Personalisation des boucles de contrôle pour l'optimisation de votre centrale</p>
-                                    <div class="grid grid-cols-2 gap-4">
+                                    <div class="grid grid-cols-2 gap-4 mt-4">
                                         <div class="bg-gray-50 p-3 rounded-lg text-center">
                                             <span class="text-sm text-gray-600">Paramétrage</span>
                                             <p class="font-semibold text-meleon-primary">Sur mesure</p>
@@ -471,11 +442,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
+                        <div class="flex-grow relative">
                             <div class="absolute inset-0 bg-meleon-yellow/20 rounded-2xl transform -rotate-3"></div>
-                            <img src="images/Regulation.png" alt="Regulation" class="relative rounded-2xl shadow-lg"/>
+                            <img src="images/Regulation.png" alt="Regulation" class="relative rounded-2xl shadow-lg w-full h-auto"/>
                         </div>
                     </div>
+        
                     <!-- Bottom Metrics -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
                         <div class="bg-white p-6 rounded-2xl shadow-lg">
