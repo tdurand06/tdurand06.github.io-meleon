@@ -227,13 +227,13 @@
 }
 /*Spacing between sections*/
 .section-spacing {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .section-spacing-large {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .grid-pattern-large {
