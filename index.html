@@ -929,22 +929,29 @@
                         activeSlide: 0,
                         startX: 0,
                         currentX: 0,
+                        initialX: 0,
                         dragging: false,
                         snapToSlide() {
                             const slideWidth = this.$refs.slideTrack.firstElementChild.offsetWidth;
-                            const currentPosition = Math.abs(this.currentX);
-                            const nearestSlide = Math.round(currentPosition / slideWidth);
+                            const nearestSlide = Math.round(Math.abs(this.currentX) / slideWidth);
                             this.activeSlide = Math.max(0, Math.min(nearestSlide, 2));
                             this.currentX = -this.activeSlide * slideWidth;
                         }
                      }"
-                     @touchstart="startX = $event.touches[0].clientX; dragging = true;"
-                     @touchmove.prevent="if (dragging) { 
-                        const diff = $event.touches[0].clientX - startX;
-                        const slideWidth = $refs.slideTrack.firstElementChild.offsetWidth;
-                        const maxScroll = -(slideWidth * 2);
-                        currentX = Math.max(maxScroll, Math.min(0, diff));
-                     }"
+                     @touchstart="
+                        startX = $event.touches[0].clientX; 
+                        initialX = currentX;
+                        dragging = true;
+                     "
+                     @touchmove.prevent="
+                        if (dragging) { 
+                            const diff = $event.touches[0].clientX - startX;
+                            const slideWidth = $refs.slideTrack.firstElementChild.offsetWidth;
+                            const newX = initialX + diff;
+                            const maxScroll = -(slideWidth * 2);
+                            currentX = Math.max(maxScroll, Math.min(0, newX));
+                        }
+                     "
                      @touchend="dragging = false; snapToSlide();">
         
                     <div class="flex" 
@@ -1047,7 +1054,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                     </div>
                 </div>
             </div>
