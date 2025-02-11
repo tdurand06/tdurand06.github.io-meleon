@@ -129,20 +129,35 @@
     </div>
 
     <nav class="fixed w-full bg-white shadow-lg z-40">
-        <div class="flex items-center justify-between"> <!-- Remove container, keep full width -->
-            <!-- Left side with padding -->
-            <div class="px-4">
+        <div class="flex items-center justify-between py-5 md:py-6"> <!-- Restored vertical padding -->
+            <!-- Left side (Logo) with generous padding -->
+            <div class="px-12 md:px-24">
                 <a href="#hero" class="cursor-pointer">
                     <div class="logo logo-default h-12 md:h-16 w-48" role="img" aria-label="Meleon Logo"></div>
                 </a>
             </div>
             
-            <!-- Right side with padding -->
-            <div class="hidden md:flex items-center space-x-8 px-4">
+            <!-- Right side (Navigation Items) with matching padding -->
+            <div class="hidden md:flex items-center space-x-12 px-12 md:px-24">
                 <a href="#EMS" class="text-meleon-primary hover:text-meleon-medium transition-colors">
                     Plateforme EMS
                 </a>
-                <!-- ... other navigation items ... -->
+                <a href="#Hardware" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                    Hardware
+                </a>                    
+                <a href="#Solution-desktop" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                    Solutions
+                </a>
+                <a href="#Infrastructure" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                    Infrastructure
+                </a>   
+                <a href="#experts" class="text-meleon-primary hover:text-meleon-medium transition-colors">
+                    Qui-sommes nous?
+                </a>
+                <a href="#contact" class="bg-meleon-primary text-white px-4 py-2 rounded-lg 
+                                        hover:bg-meleon-medium transition-colors animate-pulse">
+                    Contact
+                </a>
             </div>
         </div>
     </nav>
