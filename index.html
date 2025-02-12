@@ -305,10 +305,10 @@
                            <div class="flex items-center mb-6">
                                <div class="icon-container icon-green">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M11 2L6 7l3 3 5-5m-1 6l7 7m-9-3L2 20l2 2 8-8m1-5l-5 5" />
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M2 12l3 3 3-3-3-3-3 3zm2-2.5v-4l2-2h6l2 2v4M7 12h10m0 0l-2-2m2 2l-2 2m-8 3h10m0 0l-2-2m2 2l-2 2"/>
                                     </svg>
                                </div>
-                               <h3 class="text-xl font-semibold text-meleon-primary ml-4">Une vision de terrain/h3>
+                               <h3 class="text-xl font-semibold text-meleon-primary ml-4">Une vision de terrain</h3>
                            </div>
                            <p class="text-gray-600">
                                Un produit et une solution entièrement conçue par des acteurs de terrain, testée et améliorée de façon continue selon les retours d'expérience utilisateur.
@@ -327,9 +327,8 @@
                     <h2 class="text-5xl font-bold text-white mb-6 tracking-wide drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]" 
                         data-aos="zoom-in" 
                         data-aos-duration="800">
-                        Plateforme EMS Meleon
+                        La plateforme
                     </h2>
-                    
                     <p class="text-3xl font-light text-white tracking-wide" 
                        data-aos="fade-up" 
                        data-aos-delay="200"
@@ -358,15 +357,74 @@
                                 <!-- Content Area - Using same flex structure as your example -->
                                 <div class="flex-grow flex flex-col">
                                     <!-- Text content below title -->
+Partager
+
+
+Vous avez dit :
+svg icon name for shovel?
+
+                        <!-- Terrain card Card -->
+                       <div class="feature-card-solid" data-aos="fade-up" data-aos-delay="100">
+                           <div class="flex items-center mb-6">
+                               <div class="icon-container icon-green">
+                                   <svg class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                   </svg>
+                               </div>
+                               <h3 class="text-xl font-semibold text-meleon-primary ml-4">Une vision de terrain/h3>
+                           </div>
+                           <p class="text-gray-600">
+                               Un produit et une solution entièrement conçue par des acteurs de terrain, testée et améliorée de façon continue selon les retours d'expérience utilisateur.
+                           </p>
+                       </div>
+ChatGPT a dit :
+For a shovel icon, you can use the heroicons library or a more specific library like Font Awesome. If you want a quick shovel icon in SVG format, here’s an alternative for your <svg> tag:
+
+html
+Copier
+Modifier
+<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-meleon-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M11 2L6 7l3 3 5-5m-1 6l7 7m-9-3L2 20l2 2 8-8m1-5l-5 5" />
+</svg>
+Alternatively, you can search for "heroicons-solid tool" for better integration if needed. Want it styled a specific way (like modern, minimal, or vintage)?
+
+
+
+
+
+
+
+Vous avez dit :
+that shovel did not work, i want a simple svg that represents field work, so either try to findanother shovel or another icon. 
+
+anyways, here:, i want to be able to go to the next line where i wrote <br>, and i also want bullet points (for the 16 widgets, and sub bullet points for the 12 and 4), i think something with "li" works?
+
                                     <div>
-                                        <p class="text-gray-600">Tableaux de bord en temps réel entièrement personnalisables</p>
+                                        <p class="text-gray-600">Tableaux de bord en temps réel entièrement personnalisables<br>3 sous-vignettes:<br>
+                                         - 16 widgets <br>
+                                        12 pour la visualisation <br>
+                                        4 pour le contrôle manuel</p>
                                     </div>
-                                    
+                                    <div>
+                                      <p class="text-gray-600">Tableaux de bord en temps réel entièrement personnalisables :</p>
+                                      <ul class="list-disc pl-6 text-gray-600">
+                                        <li>3 sous-vignettes :
+                                          <ul class="list-disc pl-6">
+                                            <li>16 widgets :
+                                              <ul class="list-disc pl-6">
+                                                <li>12 pour la visualisation</li>
+                                                <li>4 pour le contrôle manuel</li>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </div>
                                     <!-- Metric box at bottom -->
                                     <div class="mt-auto mb-2">
                                         <div class="flex flex-col p-4 bg-gray-50 rounded-lg">
                                             <span class="text-lg font-semibold text-meleon-primary">Rafraîchissement</span>
-                                            <span class="text-sm text-gray-600">1s</span>
+                                            <span class="text-sm text-gray-600">De 1 seconde à 1 jour</span>
                                         </div>
                                     </div>
                                 </div>
