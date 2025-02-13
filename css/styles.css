@@ -352,8 +352,7 @@
 .image-compare {
     position: relative;
     width: 100%;
-    height: auto; /* Adjust this height as needed */
-    overflow: hidden;
+    height: 500px; /* Adjust this height as needed */
     border-radius: 0.5rem;
 }
 
