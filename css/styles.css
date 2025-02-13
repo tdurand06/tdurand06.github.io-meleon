@@ -340,6 +340,23 @@
 }
 
 /* Comparison Slider Styles */
+/* Prevent blue selection effect */
+body {
+  user-select: none;
+}
+.title-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
 .comparison-container {
     background: white;
     padding: 1rem;
