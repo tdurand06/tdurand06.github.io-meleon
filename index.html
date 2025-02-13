@@ -1371,5 +1371,22 @@
             document.querySelector('.scroll-progress-bar').style.width = scrolled + '%';
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.comparison-slider__input');
+        const beforeImage = document.querySelector('.comparison-slider__before');
+        
+        function updateSlider(value) {
+            beforeImage.style.clipPath = `polygon(0 0, ${value}% 0, ${value}% 100%, 0 100%)`;
+        }
+    
+        // Handle both mouse events and touch events
+        slider.addEventListener('input', (e) => updateSlider(e.target.value));
+        slider.addEventListener('change', (e) => updateSlider(e.target.value));
+        
+        // Initial position
+        updateSlider(50);
+    });
+    </script>
 </body>
 </html>
