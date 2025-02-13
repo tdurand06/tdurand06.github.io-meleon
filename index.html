@@ -1376,36 +1376,36 @@
         });
     </script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const container = document.querySelector('.image-compare');
-        const beforeImage = document.querySelector('.image-wrapper.before');
-        const sliderHandle = document.querySelector('.slider-handle');
-        let isDragging = false;
-    
-        function updateSliderPosition(x) {
-            const rect = container.getBoundingClientRect();
-            let percent = ((x - rect.left) / rect.width) * 100;
-            percent = Math.min(Math.max(percent, 0), 100);
-            
-            beforeImage.style.clipPath = `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;
-            sliderHandle.style.left = `${percent}%`;
-        }
-    
-        function handleMove(e) {
-            if (!isDragging) return;
-            const x = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-            updateSliderPosition(x);
-        }
-    
-        sliderHandle.addEventListener('mousedown', () => isDragging = true);
-        sliderHandle.addEventListener('touchstart', () => isDragging = true);
-    
-        window.addEventListener('mousemove', handleMove);
-        window.addEventListener('touchmove', handleMove);
-    
-        window.addEventListener('mouseup', () => isDragging = false);
-        window.addEventListener('touchend', () => isDragging = false);
-    });
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.image-compare');
+            const beforeImage = document.querySelector('.image-wrapper.before');
+            const sliderHandle = document.querySelector('.slider-handle');
+            let isDragging = false;
+        
+            function updateSliderPosition(x) {
+                const rect = container.getBoundingClientRect();
+                let percent = ((x - rect.left) / rect.width) * 100;
+                percent = Math.min(Math.max(percent, 0), 100);
+                
+                beforeImage.style.clipPath = `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;
+                sliderHandle.style.left = `${percent}%`;
+            }
+        
+            function handleMove(e) {
+                if (!isDragging) return;
+                const x = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+                updateSliderPosition(x);
+            }
+        
+            sliderHandle.addEventListener('mousedown', () => isDragging = true);
+            sliderHandle.addEventListener('touchstart', () => isDragging = true);
+        
+            window.addEventListener('mousemove', handleMove);
+            window.addEventListener('touchmove', handleMove);
+        
+            window.addEventListener('mouseup', () => isDragging = false);
+            window.addEventListener('touchend', () => isDragging = false);
+        });
     </script>
 </body>
 </html>
