@@ -338,6 +338,11 @@
   border-radius: 50%;
   animation: simplePulse 2s ease infinite;
 }
+
+/* Prevent blue selection effect */
+body {
+  user-select: none;
+}
 /* Perplixty changes */
 
 .comparison-container {
