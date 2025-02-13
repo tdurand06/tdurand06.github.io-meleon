@@ -346,6 +346,7 @@
     max-width: 800px; /* Adjust as needed */
     margin: 0 auto;
     overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .image-compare {
@@ -420,9 +421,10 @@
 
 .title-overlay {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(0, 0, 0, 0.7);
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--meleon-primary);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
