@@ -389,7 +389,7 @@ body {
 .slider-handle {
     position: absolute;
     top: 0;
-    left: 10%;
+    left: 30%;
     height: 100%;
     transform: translateX(-50%);
     z-index: 3;
@@ -399,7 +399,7 @@ body {
 .slider-line {
     position: absolute;
     top: 0;
-    left: 10%;
+    left: 30%;
     width: 2px;
     height: 100%;
     background: var(--meleon-yellow);
