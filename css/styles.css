@@ -378,7 +378,7 @@ body {
 }
 
 .image-wrapper.before {
-    clip-path: polygon(0 0, 30% 0, 30% 100%, 0 100%);
+    clip-path: polygon(0 0, 10% 0, 10% 100%, 0 100%);
     z-index: 2;
 }
 
@@ -389,7 +389,7 @@ body {
 .slider-handle {
     position: absolute;
     top: 0;
-    left: 30%;
+    left: 10%;
     height: 100%;
     transform: translateX(-50%);
     z-index: 3;
@@ -399,7 +399,7 @@ body {
 .slider-line {
     position: absolute;
     top: 0;
-    left: 30%;
+    left: 10%;
     width: 2px;
     height: 100%;
     background: var(--meleon-yellow);
