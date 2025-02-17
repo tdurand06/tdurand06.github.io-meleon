@@ -378,7 +378,7 @@ body {
 }
 
 .image-wrapper.before {
-    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    clip-path: polygon(0 0, 30% 0, 30% 100%, 0 100%);
     z-index: 2;
 }
 
