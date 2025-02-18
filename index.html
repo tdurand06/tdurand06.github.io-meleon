@@ -751,79 +751,54 @@
                 </div>
         
                 <div class="max-w-6xl mx-auto relative" x-data="{ 
-                        currentSlide: 0,
-                        isTransitioning: false,
-                        slideWidth: 0,
+                    currentSlide: 0,
+                    isTransitioning: false,
+                    init() {
+                        this.slideWidth = this.$refs.slideTrack.firstElementChild.offsetWidth;
+                    },
+                    next() {
+                        if (this.isTransitioning) return;
+                        this.isTransitioning = true;
                         
-                        init() {
-                            this.calculateSlideWidth();
-                            window.addEventListener('resize', () => {
-                                this.calculateSlideWidth();
-                                // Immediately apply the new width to maintain correct position
-                                this.$refs.slideTrack.style.transform = `translateX(-${this.currentSlide * this.slideWidth}px)`;
-                            });
-                        },
+                        this.currentSlide++;
                         
-                        calculateSlideWidth() {
-                            // This gets the full width including gaps
-                            this.slideWidth = this.$refs.slideTrack.firstElementChild.offsetWidth + 32; // Adding gap between slides
-                        },
-                        
-                        next() {
-                            if (this.isTransitioning) return;
-                            this.isTransitioning = true;
-                            this.calculateSlideWidth();
-                            
-                            if (this.currentSlide === 1) {
-                                this.currentSlide = 2;
-                                this.$refs.slideTrack.style.transform = `translateX(-${2 * this.slideWidth}px)`;
-                                
+                        if (this.currentSlide === 3) {
+                            setTimeout(() => {
+                                this.$refs.slideTrack.style.transition = 'none';
+                                this.currentSlide = 0;
+                                this.$refs.slideTrack.style.transform = 'translateX(0)';
                                 setTimeout(() => {
-                                    setTimeout(() => {
-                                        this.$refs.slideTrack.style.transition = 'none';
-                                        this.currentSlide = 0;
-                                        this.$refs.slideTrack.style.transform = `translateX(0)`;
-                                        setTimeout(() => {
-                                            this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
-                                            this.isTransitioning = false;
-                                        }, 50);
-                                    }, 500);
-                                }, 1000);
-                            } else {
-                                this.currentSlide++;
-                                setTimeout(() => this.isTransitioning = false, 1000);
-                            }
-                        },
-                        
-                        prev() {
-                            if (this.isTransitioning) return;
-                            this.isTransitioning = true;
-                            this.calculateSlideWidth();
-                            
-                            if (this.currentSlide === 0) {
-                                this.$refs.slideTrack.style.transform = `translateX(0)`;
-                                
-                                setTimeout(() => {
-                                    this.$refs.slideTrack.style.transition = 'none';
-                                    this.currentSlide = 2;
-                                    
-                                    setTimeout(() => {
-                                        this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
-                                        this.currentSlide = 1;
-                                        this.$refs.slideTrack.style.transform = `translateX(-${1 * this.slideWidth}px)`;
-                                        setTimeout(() => {
-                                            this.isTransitioning = false;
-                                        }, 1000);
-                                    }, 500);
+                                    this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
+                                    this.isTransitioning = false;
                                 }, 50);
-                            } else {
-                                this.currentSlide--;
-                                setTimeout(() => this.isTransitioning = false, 1000);
-                            }
+                            }, 1000);
+                        } else {
+                            setTimeout(() => this.isTransitioning = false, 1000);
                         }
-                    }"
-
-
+                    },
+                    
+                    prev() {
+                        if (this.isTransitioning) return;
+                        this.isTransitioning = true;
+                        
+                        if (this.currentSlide === 0) {
+                            this.$refs.slideTrack.style.transition = 'none';
+                            this.currentSlide = 3;
+                            this.$refs.slideTrack.style.transform = `translateX(-${3 * 100}%)`;
+                            
+                            setTimeout(() => {
+                                this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
+                                this.currentSlide = 2;
+                                setTimeout(() => {
+                                    this.isTransitioning = false;
+                                }, 1000);
+                            }, 50);
+                        } else {
+                            this.currentSlide--;
+                            setTimeout(() => this.isTransitioning = false, 1000);
+                        }
+                    }
+                }">
                     <div class="absolute -left-16 top-1/2 transform -translate-y-1/2 z-10">
                         <button @click="prev" 
                                 class="bg-white/80 hover:bg-white rounded-full p-3 shadow-lg
@@ -847,7 +822,7 @@
                     <div class="overflow-hidden">
                         <div class="flex gap-8 transition-transform duration-1000 ease-in-out"
                              x-ref="slideTrack"
-                             :style="{ transform: `translateX(-${currentSlide * slideWidth}px)` }">
+                             :style="{ transform: `translateX(-${currentSlide * (slideWidth + 32)}px)` }">
                             
                             <!-- Card 1: Remplacement -->
                             <div class="w-full flex-none">
