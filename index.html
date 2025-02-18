@@ -753,50 +753,47 @@
                 <div class="max-w-6xl mx-auto relative" x-data="{ 
                     currentSlide: 0,
                     isTransitioning: false,
-                    init() {
+                    slideWidth: 0,
+                    updateSlideWidth() {
                         this.slideWidth = this.$refs.slideTrack.firstElementChild.offsetWidth;
+                    },
+                    init() {
+                        this.updateSlideWidth();
+                        window.addEventListener('resize', () => {
+                            this.updateSlideWidth();
+                        });
                     },
                     next() {
                         if (this.isTransitioning) return;
                         this.isTransitioning = true;
-                        
+                
                         this.currentSlide++;
-                        
-                        if (this.currentSlide === 3) {
-                            setTimeout(() => {
-                                this.$refs.slideTrack.style.transition = 'none';
-                                this.currentSlide = 0;
-                                this.$refs.slideTrack.style.transform = 'translateX(0)';
-                                setTimeout(() => {
-                                    this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
-                                    this.isTransitioning = false;
-                                }, 50);
-                            }, 1000);
-                        } else {
-                            setTimeout(() => this.isTransitioning = false, 1000);
+                        let maxSlides = this.$refs.slideTrack.children.length - 1;
+                
+                        if (this.currentSlide > maxSlides) {
+                            this.currentSlide = maxSlides; // Prevent overshooting
                         }
+                
+                        requestAnimationFrame(() => {
+                            this.$refs.slideTrack.style.transform = `translateX(-${this.currentSlide * (this.slideWidth + 32)}px)`;
+                        });
+                
+                        setTimeout(() => this.isTransitioning = false, 1000);
                     },
-                    
                     prev() {
                         if (this.isTransitioning) return;
                         this.isTransitioning = true;
-                        
-                        if (this.currentSlide === 0) {
-                            this.$refs.slideTrack.style.transition = 'none';
-                            this.currentSlide = 3;
-                            this.$refs.slideTrack.style.transform = `translateX(-${3 * 100}%)`;
-                            
-                            setTimeout(() => {
-                                this.$refs.slideTrack.style.transition = 'transform 1000ms ease-in-out';
-                                this.currentSlide = 2;
-                                setTimeout(() => {
-                                    this.isTransitioning = false;
-                                }, 1000);
-                            }, 50);
-                        } else {
-                            this.currentSlide--;
-                            setTimeout(() => this.isTransitioning = false, 1000);
+                
+                        this.currentSlide--;
+                        if (this.currentSlide < 0) {
+                            this.currentSlide = 0; // Prevent overshooting
                         }
+                
+                        requestAnimationFrame(() => {
+                            this.$refs.slideTrack.style.transform = `translateX(-${this.currentSlide * (this.slideWidth + 32)}px)`;
+                        });
+                
+                        setTimeout(() => this.isTransitioning = false, 1000);
                     }
                 }">
                     <div class="absolute -left-16 top-1/2 transform -translate-y-1/2 z-10">
